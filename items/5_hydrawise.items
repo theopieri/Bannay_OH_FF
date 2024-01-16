@@ -1,0 +1,49 @@
+String SprinkerControllerStatus11 "Status of roof controller [%s]" (hydRoof) {channel="hydrawise:controller:hydacc:hydroof1:system#summary"}
+
+Number:Temperature SprinkerForecastDay1HiTemp "High Temp [%.1f °C]" <temperature> (hydRoof) {channel="hydrawise:controller:hydacc:hydroof1:forecast1#temperaturehigh"}
+Number:Temperature SprinkerForecastDay1LowTemp "Low Temp [%.1f °C]"  <temperature> (hydRoof) {channel="hydrawise:controller:hydacc:hydroof1:forecast1#temperaturelow"}
+String SprinkerForecastDay1Conditions "Conditions [%s]" (hydRoof) {channel="hydrawise:controller:hydacc:hydroof1:forecast1#conditions"}
+Number SprinkerForecastDay1Humidity "Humidity [%d%%]" <humidity> (hydRoof) {channel="hydrawise:controller:hydacc:hydroof1:forecast1#humidity"}
+Number:Speed SprinkerForecastDay1Wind "Wind [%s km/h]" <wind>(hydRoof) {channel="hydrawise:controller:hydacc:hydroof1:forecast1#wind"}
+
+
+String SprinklerZone1Name "Roof zone name " (hydRoof) {channel="hydrawise:controller:hydacc:hydroof1:zone1#name"}
+Switch SprinklerZone1Run "Roof run zone 1" (hydRoof) {channel="hydrawise:controller:hydacc:hydroof1:zone1#run"}
+DateTime SprinklerZone1StartTime "Roof zone 1 Start Time [%s]" (hydRoof) {channel="hydrawise:controller:hydacc:hydroof1:zone1#nextruntime"}
+Number SprinklerZone1TimeLeft "Roof zone 1 Time Left" (hydRoof) {channel="hydrawise:controller:hydacc:hydroof1:zone1#timeleft"}
+
+
+String secondControllerStatus11 "Status of Second controller [%s]" (hydSecond) {channel="hydrawise:controller:hydacc:hydsec:system#summary"}
+
+Number:Temperature secondForecastDay1HiTemp "High Temp [%.1f °C]" <temperature> (hydSecond) {channel="hydrawise:controller:hydacc:hydsec:forecast1#temperaturehigh"}
+Number:Temperature secondForecastDay1LowTemp "Low Temp [%.1f °C]"  <temperature> (hydSecond) {channel="hydrawise:controller:hydacc:hydsec:forecast1#temperaturelow"}
+String secondForecastDay1Conditions "Conditions [%s]" (hydSecond) {channel="hydrawise:controller:hydacc:hydsec:forecast1#conditions"}
+Number secondForecastDay1Humidity "Humidity [%d%%]" <humidity> (hydSecond) {channel="hydrawise:controller:hydacc:hydsec:forecast1#humidity"}
+Number:Speed secondForecastDay1Wind "Wind [%s km/h]" <wind>(hydSecond) {channel="hydrawise:controller:hydacc:hydsec:forecast1#wind"}
+
+
+String secondZone1Name "Second zone name " (hydSecond) {channel="hydrawise:controller:hydacc:hydsec:zone1#name"}
+Switch secondZone1Run "Second run zone 1" (hydSecond) {channel="hydrawise:controller:hydacc:hydsec:zone1#run"}
+DateTime secondZone1StartTime "Second zone 1 Start Time [%s]" (hydSecond) {channel="hydrawise:controller:hydacc:hydsec:zone1#nextruntime"}
+Number secondZone1TimeLeft "Second zone 1 Time Left" (hydSecond) {channel="hydrawise:controller:hydacc:hydsec:zone1#timeleft"}
+
+
+String bsControllerStatus11 "Status of Basement controller [%s]" (hydBS) {channel="hydrawise:controller:hydacc:hydbs:system#summary"}
+
+Number:Temperature bsForecastDay1HiTemp "High Temp [%.1f °C]" <temperature> (hydBS) {channel="hydrawise:controller:hydacc:hydbs:forecast1#temperaturehigh"}
+Number:Temperature bsForecastDay1LowTemp "Low Temp [%.1f °C]"  <temperature> (hydBS) {channel="hydrawise:controller:hydacc:hydbs:forecast1#temperaturelow"}
+String bsForecastDay1Conditions "Conditions [%s]" (hydBS) {channel="hydrawise:controller:hydacc:hydbs:forecast1#conditions"}
+Number bsForecastDay1Humidity "Humidity [%d%%]" <humidity> (hydBS) {channel="hydrawise:controller:hydacc:hydbs:forecast1#humidity"}
+Number:Speed bsForecastDay1Wind "Wind [%s km/h]" <wind>(hydBS) {channel="hydrawise:controller:hydacc:hydbs:forecast1#wind"}
+
+
+String bsZone1Name "Basement zone name " (hydBS) {channel="hydrawise:controller:hydacc:hydbs:zone1#name"}
+Switch bsZone1Run "Basement run zone 1" (hydBS) {channel="hydrawise:controller:hydacc:hydbs:zone1#run"}
+DateTime bsZone1StartTime "Basement zone 1 Start Time [%s]" (hydBS) {channel="hydrawise:controller:hydacc:hydbs:zone1#nextruntime"}
+Number bsZone1TimeLeft "Basement zone 1 Time Left" (hydBS) {channel="hydrawise:controller:hydacc:hydbs:zone1#timeleft"}
+
+
+String bsZone2Name "Basement zone name " (hydBS) {channel="hydrawise:controller:hydacc:hydbs:zone2#name"}
+Switch bsZone2Run "Basement run zone 2" (hydBS) {channel="hydrawise:controller:hydacc:hydbs:zone2#run"}
+DateTime bsZone2StartTime "Basement zone 2 Start Time [%s]" (hydBS) {channel="hydrawise:controller:hydacc:hydbs:zone2#nextruntime"}
+Number bsZone2TimeLeft "Basement zone 2 Time Left" (hydBS) {channel="hydrawise:controller:hydacc:hydbs:zone2#timeleft"}

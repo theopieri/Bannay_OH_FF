@@ -1,0 +1,33 @@
+Switch sswitch1  "Lift To GF HOUSE" <door> (All,Ser)       [door] {channel="enocean:centralCommand:ftdis:scc01:generalSwitch"} 
+Switch sswitch2  "Inside APT 2" <door> (All,Ser)       [door] {channel="enocean:centralCommand:ftdis:scc02:generalSwitch"}
+Switch sswitch3  "Inside APT 3" <door> (All,Ser)       [door] {channel="enocean:centralCommand:ftdis:scc03:generalSwitch"} 
+Switch sswitch4  "Second Floor Entrance" <door> (All,Ser)       [door] {channel="enocean:centralCommand:ftdis:scc04:generalSwitch"}
+Switch sswitch5  "DOOR X1" <door> (All,Spare)       [door] {channel="enocean:centralCommand:ftdis:scc05:generalSwitch"} 
+Switch sswitch6  "DOOR X2" <door> (All,Spare)       [door] {channel="enocean:centralCommand:ftdis:scc06:generalSwitch"}
+
+
+Switch sswitch7  "Lift Entrance" <door> (All,Ser)    [door]  {channel="enocean:genericThing:ftdis:sfmz1:genericSwitch",autoupdate="true"}
+Switch sswitch8  "APT 1 Entrance" <door> (All,Ser)    [door]  {channel="enocean:genericThing:ftdis:sfmz2:genericSwitch",autoupdate="true"}
+Switch sswitch9  "APT 2 Entrance" <door> (All,Ser)    [door]  {channel="enocean:genericThing:ftdis:sfmz3:genericSwitch",autoupdate="true"}
+Switch sswitch10 "APT 3 Entrance" <door> (All,Ser)    [door]  {channel="enocean:genericThing:ftdis:sfmz4:genericSwitch",autoupdate="true"}
+Switch sswitch11 "First floor Entrance" <door> (All,Ser)    [door]  {channel="enocean:genericThing:ftdis:sfmz5:genericSwitch",autoupdate="true"}
+Switch sswitch12 "Door 10" <door> (All,Spare)    [door] {channel="enocean:genericThing:ftdis:sfmz6:genericSwitch",autoupdate="true"}
+Switch sswitch13 "Server Room" <door> (All,Ser)    [door] {channel="enocean:genericThing:ftdis:sfmz7:genericSwitch",autoupdate="true"}
+Switch sswitch14 "Ped Gate" <frontdoor> (All,Ser)    [door] {channel="enocean:genericThing:ftdis:sfmz8:genericSwitch",autoupdate="true"}
+Switch sswitch15 "Second Floor Outdoor" <door> (All,Ser)    [door] {channel="enocean:genericThing:ftdis:sfmz9:genericSwitch",autoupdate="true"}
+Switch sswitch16 "Car slide door" <garagedoor> (All,Ser)    [door] {channel="enocean:genericThing:ftdis:sfmz10:genericSwitch",autoupdate="true"}
+
+Number energy1i "Main House instant power [%.2f W]" <Energy> (meter) {channel="enocean:automatedMeterSensor:ftdis:energy1:instantpower"}
+Number energy1t "Main House total power [%.2f KWh]" <Energy> (meter) {channel="enocean:automatedMeterSensor:ftdis:energy1:totalusage"}
+Number energy2i "First Floor instant power [%.2f W]" <Energy> (meter) {channel="enocean:automatedMeterSensor:ftdis:energy2:instantpower"}
+Number energy2t "First Floor total power [%.2f KWh]" <Energy> (meter) {channel="enocean:automatedMeterSensor:ftdis:energy2:totalusage"}
+Number energy3i "Server Room instant power [%.2f W]" <Energy> (meter) {channel="enocean:automatedMeterSensor:ftdis:energy3:instantpower"}
+Number energy3t "Server Room total power [%.2f KWh]" <Energy> (meter) {channel="enocean:automatedMeterSensor:ftdis:energy3:totalusage"}
+
+//Switch sfts1a "High level Sewage Pump [MAP(fsm_alarm.map):%s]"  <contact> (All) { channel="enocean:genericThing:ftdis:sfts1a:genericSwitch"}
+//Switch sfts1b "High level Rain Pump [MAP(fsm_alarm.map):%s]"  <contact> (All) { channel="enocean:genericThing:ftdis:sfts1b:genericSwitch"}
+//Switch sfts1c "Trip Sewage Pump 1 [MAP(fsm_alarm.map):%s]"  <contact> (All) { channel="enocean:genericThing:ftdis:sfts1c:genericSwitch"}
+//Switch sfts1d "Trip Sewage Pump 2 [MAP(fsm_alarm.map):%s]"  <contact> (All) { channel="enocean:genericThing:ftdis:sfts1d:genericSwitch"}
+//Switch sfts1e "FTS 14 [MAP(fsm_alarm.map):%s]"  <contact> (All) { channel="enocean:genericThing:ftdis:sfts1e:genericSwitch"}
+Switch sfts1f "Main Door APR 1"  <contact> (All,Ser) { channel="enocean:genericThing:ftdis:sfts1f:genericSwitch"}
+

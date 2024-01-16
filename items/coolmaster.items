@@ -1,0 +1,107 @@
+Switch AC1On     "Kitchen AC1 ON/OFF" (AcsGF)                                                    [HVAC] { channel="coolmasternet:hvac:main:ac1:on"}
+String AC1Mode   "Kitchen AC1 Mode" <snow>                                                [HVAC] { channel="coolmasternet:hvac:main:ac1:mode" }
+Number AC1Temp   "Kitchen AC1 Temperature [%.1f °C]"    <temperature>                     [HVAC] { channel="coolmasternet:hvac:main:ac1:current_temp" }
+Number AC1Set    "Kitchen AC1 Set Point Temperature [%.1f °C]" <temperature>           [HVAC] { channel="coolmasternet:hvac:main:ac1:set_temp" }
+String AC1Fan    "Kitchen AC1 Fan" <fan>                                                 [HVAC] { channel="coolmasternet:hvac:main:ac1:fan_speed" }
+//String AC1Louvre "AC1 Louvre" <fan> (AcsGF)                                              [HVAC] { channel="coolmasternet:hvac:main:ac1:louvre_angle" }
+
+Switch AC2On     "Living AC2 ON/OFF" (AcsGF)                                                    [HVAC] { channel="coolmasternet:hvac:main:ac2:on"}
+String AC2Mode   "Living AC2 Mode" <snow>                                               [HVAC] { channel="coolmasternet:hvac:main:ac2:mode" }
+Number AC2Temp   "Living AC2 Temperature [%.1f °C]"    <temperature>                    [HVAC] { channel="coolmasternet:hvac:main:ac2:current_temp" }
+Number AC2Set    "Living AC2 Set Point Temperature [%.1f °C]" <temperature>            [HVAC] { channel="coolmasternet:hvac:main:ac2:set_temp" }
+String AC2Fan    "Living AC2 Fan" <fan>                                             [HVAC] { channel="coolmasternet:hvac:main:ac2:fan_speed" }
+//String AC2Louvre "AC2 Louvre" <fan>                                               [HVAC] { channel="coolmasternet:hvac:main:ac2:louvre_angle" }
+/*
+Switch AC3On     "AC3 ON/OFF" (AcsGF)                                                    [HVAC] { channel="coolmasternet:hvac:main:ac3:on"}
+String AC3Mode   "AC3 Mode" <snow>                                             [HVAC] { channel="coolmasternet:hvac:main:ac3:mode" }
+Number AC3Temp   "AC3 Temperature [%.1f °C]"    <temperature>                     [HVAC] { channel="coolmasternet:hvac:main:ac3:current_temp" }
+Number AC3Set    "AC3 Set Point Temperature [%.1f °C]" <temperature>             [HVAC] { channel="coolmasternet:hvac:main:ac3:set_temp" }
+String AC3Fan    "AC3 Fan" <fan>                                                  [HVAC] { channel="coolmasternet:hvac:main:ac3:fan_speed" }
+//String AC3Louvre "AC3 Louvre" <fan>                                              [HVAC] { channel="coolmasternet:hvac:main:ac3:louvre_angle" }
+*/
+Switch AC4On     "Gym AC4 ON/OFF" (AcsGF)                                                    [HVAC] { channel="coolmasternet:hvac:main:ac4:on"}
+String AC4Mode   "Gym AC4 Mode" <snow>                                               [HVAC] { channel="coolmasternet:hvac:main:ac4:mode" }
+Number AC4Temp   "Gym AC4 Temperature [%.1f °C]"    <temperature>                    [HVAC] { channel="coolmasternet:hvac:main:ac4:current_temp" }
+Number AC4Set    "Gym AC4 Set Point Temperature [%.1f °C]" <temperature>            [HVAC] { channel="coolmasternet:hvac:main:ac4:set_temp" }
+String AC4Fan    "Gym AC4 Fan" <fan>                                                 [HVAC] { channel="coolmasternet:hvac:main:ac4:fan_speed" }
+//String AC4Louvre "AC4 Louvre" <fan> (AcsGF)                                              [HVAC] { channel="coolmasternet:hvac:main:ac4:louvre_angle" }
+/*
+Switch AC5On     "AC5 ON/OFF" (AcsGF)                                                    [HVAC] { channel="coolmasternet:hvac:main:ac5:on"}
+String AC5Mode   "AC5 Mode" <snow>                                             [HVAC] { channel="coolmasternet:hvac:main:ac5:mode" }
+Number AC5Temp   "AC5 Temperature [%.1f °C]"    <temperature>                    [HVAC] { channel="coolmasternet:hvac:main:ac5:current_temp" }
+Number AC5Set    "AC5 Set Point Temperature [%.1f °C]" <temperature>              [HVAC] { channel="coolmasternet:hvac:main:ac5:set_temp" }
+String AC5Fan    "AC5 Fan" <fan>                                                 [HVAC] { channel="coolmasternet:hvac:main:ac5:fan_speed" }
+//String AC5Louvre "AC5 Louvre" <fan>                                               [HVAC] { channel="coolmasternet:hvac:main:ac5:louvre_angle" }
+*/
+Switch AC6On     "Guest Room 2 AC6 ON/OFF" (AcsGF)                                                    [HVAC] { channel="coolmasternet:hvac:main:ac6:on"}
+String AC6Mode   "Guest Room 2 AC6 Mode" <snow>                                                [HVAC] { channel="coolmasternet:hvac:main:ac6:mode" }
+Number AC6Temp   "Guest Room 2 AC6 Temperature [%.1f °C]"    <temperature>                     [HVAC] { channel="coolmasternet:hvac:main:ac6:current_temp" }
+Number AC6Set    "Guest Room 2 AC6 Set Point Temperature [%.1f °C]" <temperature>              [HVAC] { channel="coolmasternet:hvac:main:ac6:set_temp" }
+String AC6Fan    "Guest Room 2 AC6 Fan" <fan>                                                  [HVAC] { channel="coolmasternet:hvac:main:ac6:fan_speed" }
+//String AC6Louvre "AC6 Louvre" <fan>                                               [HVAC] { channel="coolmasternet:hvac:main:ac6:louvre_angle" }
+
+Switch AC7On     "Office AC7 ON/OFF" (AcsGF)                                                    [HVAC] { channel="coolmasternet:hvac:main:ac7:on"}
+String AC7Mode   "Office AC7 Mode" <snow>                                                [HVAC] { channel="coolmasternet:hvac:main:ac7:mode" }
+Number AC7Temp   "OfficeAC7 Temperature [%.1f °C]"    <temperature>                    [HVAC] { channel="coolmasternet:hvac:main:ac7:current_temp" }
+Number AC7Set    "Office AC7 Set Point Temperature [%.1f °C]" <temperature>             [HVAC] { channel="coolmasternet:hvac:main:ac7:set_temp" }
+String AC7Fan    "Office AC7 Fan" <fan>                                                [HVAC] { channel="coolmasternet:hvac:main:ac7:fan_speed" }
+//String AC7Louvre "AC7 Louvre" <fan>                                             [HVAC] { channel="coolmasternet:hvac:main:ac7:louvre_angle" }
+
+
+//First Floor Units
+String ACFfMode "Mode AC'S First Floor"
+Switch AC8On     "Living 3 ON/OFF" (AcsFF)                                                    [HVAC] { channel="coolmasternet:hvac:main:ac8:on"}
+String AC8Mode   "Living 3 Mode" <snow>                                               [HVAC] { channel="coolmasternet:hvac:main:ac8:mode" }
+Number AC8Temp   "Living 3 Temperature [%.1f °C]"    <temperature>                     [HVAC] { channel="coolmasternet:hvac:main:ac8:current_temp" }
+Number AC8Set    "Living 3 Set Point Temperature [%.1f °C]" <temperature>              [HVAC] { channel="coolmasternet:hvac:main:ac8:set_temp" }
+String AC8Fan    "Living 3 Fan" <fan>                                                  [HVAC] { channel="coolmasternet:hvac:main:ac8:fan_speed" }
+//String AC8Louvre "AC8 Louvre" <fan>                                               [HVAC] { channel="coolmasternet:hvac:main:ac8:louvre_angle" }
+
+Switch AC9On     "Dana ON/OFF" (AcsFF)                                                    [HVAC] { channel="coolmasternet:hvac:main:ac9:on"}
+String AC9Mode   "Dana Mode" <snow>                                                [HVAC] { channel="coolmasternet:hvac:main:ac9:mode" }
+Number AC9Temp   "Dana Temperature [%.1f °C]"    <temperature>                     [HVAC] { channel="coolmasternet:hvac:main:ac9:current_temp" }
+Number AC9Set    "Dana Set Point Temperature [%.1f °C]" <temperature>              [HVAC] { channel="coolmasternet:hvac:main:ac9:set_temp" }
+String AC9Fan    "Dana Fan" <fan>                                                  [HVAC] { channel="coolmasternet:hvac:main:ac9:fan_speed" }
+//String AC9Louvre "AC9 Louvre" <fan>                                               [HVAC] { channel="coolmasternet:hvac:main:ac9:louvre_angle" }
+
+Switch AC10On     "Living 1 ON/OFF" (AcsFF)                                                  [HVAC] { channel="coolmasternet:hvac:main:ac10:on"}
+String AC10Mode   "Living 1 Mode" <snow>                                              [HVAC] { channel="coolmasternet:hvac:main:ac10:mode" }
+Number AC10Temp   "Living 1 Temperature [%.1f °C]"    <temperature>                   [HVAC] { channel="coolmasternet:hvac:main:ac10:current_temp" }
+Number AC10Set    "Living 1 Set Point Temperature [%.1f °C]" <temperature>            [HVAC] { channel="coolmasternet:hvac:main:ac10:set_temp" }
+String AC10Fan    "Living 1 Fan" <fan>                                                [HVAC] { channel="coolmasternet:hvac:main:ac10:fan_speed" }
+//String AC10Louvre "AC10 Louvre" <fan>                                             [HVAC] { channel="coolmasternet:hvac:main:ac10:louvre_angle" }
+
+Switch AC11On     "Raphael ON/OFF" (AcsFF)                                                  [HVAC] { channel="coolmasternet:hvac:main:ac11:on"}
+String AC11Mode   "Raphael Mode" <snow>                                              [HVAC] { channel="coolmasternet:hvac:main:ac11:mode" }
+Number AC11Temp   "Raphael Temperature [%.1f °C]"    <temperature>                   [HVAC] { channel="coolmasternet:hvac:main:ac11:current_temp" }
+Number AC11Set    "Raphael Set Point Temperature [%.1f °C]" <temperature>            [HVAC] { channel="coolmasternet:hvac:main:ac11:set_temp" }
+String AC11Fan    "Raphael Fan" <fan>                                                [HVAC] { channel="coolmasternet:hvac:main:ac11:fan_speed" }
+//String AC11Louvre "AC11 Louvre" <fan>                                             [HVAC] { channel="coolmasternet:hvac:main:ac11:louvre_angle" }
+
+Switch AC12On     "Living 2 ON/OFF" (AcsFF)                                                  [HVAC] { channel="coolmasternet:hvac:main:ac12:on"}
+String AC12Mode   "Living 2 Mode" <snow>                                              [HVAC] { channel="coolmasternet:hvac:main:ac12:mode" }
+Number AC12Temp   "Living 2 Temperature [%.1f °C]"    <temperature>                   [HVAC] { channel="coolmasternet:hvac:main:ac12:current_temp" }
+Number AC12Set    "Living 2 Set Point Temperature [%.1f °C]" <temperature>            [HVAC] { channel="coolmasternet:hvac:main:ac12:set_temp" }
+String AC12Fan    "Living 2 Fan" <fan>                                                [HVAC] { channel="coolmasternet:hvac:main:ac12:fan_speed" }
+//String AC12Louvre "AC12 Louvre" <fan>                                             [HVAC] { channel="coolmasternet:hvac:main:ac12:louvre_angle" }
+
+Switch AC13On     "M.bed ON/OFF" (AcsFF)                                                  [HVAC] { channel="coolmasternet:hvac:main:ac13:on"}
+String AC13Mode   "M.bed Mode" <snow>                                              [HVAC] { channel="coolmasternet:hvac:main:ac13:mode" }
+Number AC13Temp   "M.bed Temperature [%.1f °C]"    <temperature>                   [HVAC] { channel="coolmasternet:hvac:main:ac13:current_temp" }
+Number AC13Set    "M.bed Set Point Temperature [%.1f °C]" <temperature>            [HVAC] { channel="coolmasternet:hvac:main:ac13:set_temp" }
+String AC13Fan    "M.bed Fan" <fan>                                                [HVAC] { channel="coolmasternet:hvac:main:ac13:fan_speed" }
+//String AC13Louvre "AC13 Louvre" <fan>                                             [HVAC] { channel="coolmasternet:hvac:main:ac13:louvre_angle" }
+
+Switch AC20On     "AC 20 ON/OFF" (AcsGF)                                                  [HVAC] { channel="coolmasternet:hvac:main:ac20:on"}
+String AC20Mode   "AC 20 Mode" <snow>                                              [HVAC] { channel="coolmasternet:hvac:main:ac20:mode" }
+Number AC20Temp   "AC 20 Temperature [%.1f °C]"    <temperature>                   [HVAC] { channel="coolmasternet:hvac:main:ac20:current_temp" }
+Number AC20Set    "AC20 Set Point Temperature [%.1f °C]" <temperature>            [HVAC] { channel="coolmasternet:hvac:main:ac20:set_temp" }
+String AC20Fan    "AC 20 Fan" <fan>                                                [HVAC] { channel="coolmasternet:hvac:main:ac20:fan_speed" }
+//String AC20Louvre "AC20 Louvre" <fan>                                             [HVAC] { channel="coolmasternet:hvac:main:ac20:louvre_angle" }
+
+Switch AC21On     "AC 21 ON/OFF" (AcsGFS)                                                  [HVAC] { channel="coolmasternet:hvac:main:ac21:on"}
+String AC21Mode   "AC 21 Mode" <snow>                                              [HVAC] { channel="coolmasternet:hvac:main:ac21:mode" }
+Number AC21Temp   "AC 21 Temperature [%.1f °C]"    <temperature>                   [HVAC] { channel="coolmasternet:hvac:main:ac21:current_temp" }
+Number AC21Set    "AC 21 Set Point Temperature [%.1f °C]" <temperature>            [HVAC] { channel="coolmasternet:hvac:main:ac21:set_temp" }
+String AC21Fan    "AC 21 Fan" <fan>                                                [HVAC] { channel="coolmasternet:hvac:main:ac21:fan_speed" }
+//String AC21Louvre "AC21 Louvre" <fan>                                             [HVAC] { channel="coolmasternet:hvac:main:ac21:louvre_angle" }

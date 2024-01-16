@@ -1,0 +1,40 @@
+for debugging you have to do the following by using putty:
+
+sudo openhab-cli console
+password:habopen
+
+log:set DEBUG org.openhab.binding.enocean
+log:set INFO org.openhab.binding.enocean
+
+
+dmesg | grep ttyUSB
+
+[   28.543293] usb 1-1.4: FTDI USB Serial Device converter now attached to ttyUSB0
+[   49.445532] usb 1-1.3: FTDI USB Serial Device converter now attached to ttyUSB1
+[   80.661733] usb 1-1.2: FTDI USB Serial Device converter now attached to ttyUSB2
+[  110.802211] usb 1-1.1.4: FTDI USB Serial Device converter now attached to ttyUSB3
+[  122.511637] usb 1-1.1.3: FTDI USB Serial Device converter now attached to ttyUSB4
+
+name of the Device is:usb 1-1.4
+
+ vendor ID, product ID, serial number
+ usb 1-1.4
+ ATTRS{idProduct}=="6001"
+ ATTRS{idVendor}=="0403"
+ ATTRS{serial}=="FT50W5PF"
+
+
+udevadm info --name=/dev/ttyUSB0 --attribute-walk
+
+sudo nano /etc/udev/rules.d/10-usb-serial.rules
+
+SUBSYSTEM=="tty",ATTRS{serial}=="FT50W5PF",ATTRS{idProduct}=="6001", ATTRS{idVendor}=="0403", SYMLINK+="ttyUSB_DEVICE_FTDI_ROOF"
+SUBSYSTEM=="tty",ATTRS{serial}=="FT51AP87",ATTRS{idProduct}=="6001", ATTRS{idVendor}=="0403", SYMLINK+="ttyUSB_DEVICE_FTDI_FF"
+SUBSYSTEM=="tty",ATTRS{serial}=="FT50QUJA",ATTRS{idProduct}=="6001", ATTRS{idVendor}=="0403", SYMLINK+="ttyUSB_DEVICE_FTDI_GF"
+SUBSYSTEM=="tty",ATTRS{serial}=="FT51GJU2",ATTRS{idProduct}=="6001", ATTRS{idVendor}=="0403", SYMLINK+="ttyUSB_DEVICE_FTDI_GF_1"
+SUBSYSTEM=="tty",ATTRS{serial}=="FT51APV5",ATTRS{idProduct}=="6001", ATTRS{idVendor}=="0403", SYMLINK+="ttyUSB_DEVICE_SERVER"
+
+
+sudo udevadm trigger
+
+ls -l /dev/ttyUSB*

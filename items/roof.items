@@ -1,0 +1,69 @@
+//MOTION SENSOR FBH
+Switch rPir1  "Roof Bath [MAP(pir.map):%s]" <motion>  (Sensors)  [Presence] {channel="enocean:lightTemperatureOccupancySensor:ftdiroof:rpir1:motionDetection"}
+
+Switch rPir2  "Roof Stairs [MAP(pir.map):%s]" <motion>  (Sensors)    [Presence] {channel="enocean:lightTemperatureOccupancySensor:ftdiroof:rpir2:motionDetection"}
+
+
+//Dimmers
+Dimmer rdimmer1 "Hallway Spot [%.0f ]" <slider> (RfBed)               [Light]  {channel="enocean:centralCommand:ftdiroof:rdm1:dimmer"}
+Dimmer rdimmer2 "Entrance Spot Left [%.0f ]" <slider> (RfKit)       [Light]  {channel="enocean:centralCommand:ftdiroof:rdm2:dimmer"}
+Dimmer rdimmer3 "Bath Spot [%.0f ]" <slider> (RfBath)             [Light]  {channel="enocean:centralCommand:ftdiroof:rdm3:dimmer"}
+Dimmer rdimmer4 "Entrance Spot Right [%.0f ]" <slider> (RfKit)    [Light]  {channel="enocean:centralCommand:ftdiroof:rdm4:dimmer"}
+Dimmer rdimmer5 "Kitchen Spot [%.0f ]" <slider> (RfKit)           [Light]  {channel="enocean:centralCommand:ftdiroof:rdm5:dimmer"}
+
+
+//FSR14-4x
+Switch rswitch1  "Bed Spot" <light> (RfBed)                        [Light] {channel="enocean:centralCommand:ftdiroof:rcc01:generalSwitch"} 
+Switch rswitch2  "R/FSR4X-1B" <light> (Spare)                        [Light] {channel="enocean:centralCommand:ftdiroof:rcc02:generalSwitch"} 
+Switch rswitch3  "Landry" <light> (RfBath)                        [Light] {channel="enocean:centralCommand:ftdiroof:rcc03:generalSwitch"} 
+Switch rswitch4  "R/FSR4X-1D" <light> (Spare)                        [Light] {channel="enocean:centralCommand:ftdiroof:rcc04:generalSwitch"} 
+
+Switch rswitch5  "Bath Mirror" <light> /*(RfBath)*/                   [Light] {channel="enocean:centralCommand:ftdiroof:rcc05:generalSwitch"} 
+Switch rswitch6  "Back Veranda" <light> (RfOut)                   [Light] {channel="enocean:centralCommand:ftdiroof:rcc06:generalSwitch"} 
+Switch rswitch7  "Back Stairs Wall" <light> (RfOut)               [Light] {channel="enocean:centralCommand:ftdiroof:rcc07:generalSwitch"} 
+Switch rswitch8  "South Wall" <light> (Spare)                     [Light] {channel="enocean:centralCommand:ftdiroof:rcc08:generalSwitch"} 
+
+Switch rswitch9  "R/FSR4X-3A" <light> (Spare)                        [Light] {channel="enocean:centralCommand:ftdiroof:rcc09:generalSwitch"} 
+Switch rswitch10  "Roof Stairs Spot" <light> (Stairs)             [Light] {channel="enocean:centralCommand:ftdiroof:rcc10:generalSwitch"} 
+Switch rswitch11  "Roof Stairs Wall" <light> (Stairs)             [Light] {channel="enocean:centralCommand:ftdiroof:rcc11:generalSwitch"} 
+Switch rswitch12  "R/FSR4X-3D" <light> (Spare)                       [Light] {channel="enocean:centralCommand:ftdiroof:rcc12:generalSwitch"} 
+
+Switch rswitch13  "Veranda North Wall" <light> (Spare)            [Light] {channel="enocean:centralCommand:ftdiroof:rcc13:generalSwitch"} 
+Switch rswitch14  "Spike North West" <light> (RfOut)              [Light] {channel="enocean:centralCommand:ftdiroof:rcc14:generalSwitch"} 
+Switch rswitch15  "Spike North East" <light> (RfOut)              [Light] {channel="enocean:centralCommand:ftdiroof:rcc15:generalSwitch"} 
+Switch rswitch16  "R/FSR4X-4D" <light> (Spare)                      [Light] {channel="enocean:centralCommand:ftdiroof:rcc16:generalSwitch"} 
+
+Switch rswitch17  "Spike South West" <light> (RfOut)              [Light] {channel="enocean:centralCommand:ftdiroof:rcc17:generalSwitch"} 
+Switch rswitch18  "Spike South East" <light> (RfOut)              [Light] {channel="enocean:centralCommand:ftdiroof:rcc18:generalSwitch"} 
+Switch rswitch19  "Veranda North Spot" <light> (RfOut)            [Light] {channel="enocean:centralCommand:ftdiroof:rcc19:generalSwitch"} 
+Switch rswitch20  "Veranda South Spot" <light> (RfOut)            [Light] {channel="enocean:centralCommand:ftdiroof:rcc20:generalSwitch"} 
+
+Switch rswitch21  "Wall Low Light" <light> (RfOut)                [Light] {channel="enocean:centralCommand:ftdiroof:rcc21:generalSwitch"} 
+Switch rswitch22  "R/FSR2X-1B" <light> (Spare)                       [Light] {channel="enocean:centralCommand:ftdiroof:rcc22:generalSwitch"} 
+
+Switch rswitch23  "Bed Lamp West" <poweroutlet_uk> (RfBed)        [Light] {channel="enocean:centralCommand:ftdiroof:rcc23:generalSwitch"} 
+Switch rswitch24  "Bed Lamp East" <poweroutlet_uk> (RfBed)        [Light] {channel="enocean:centralCommand:ftdiroof:rcc24:generalSwitch"} 
+
+Switch rswitch25  "Towel Rail" <radiator> /*(RfBath)*/                [HVAC] {channel="enocean:centralCommand:ftdiroof:rcc25:generalSwitch"} 
+Switch rswitch26  "Rec Water" <pump> /*(RfBath)*/ [HVAC] {channel="enocean:centralCommand:ftdiroof:rcc26:generalSwitch"} 
+
+Rollershutter rmotor1 "Kitchen South [%s]" (Spare)                [Blinds] {channel="enocean:rollershutter:ftdiroof:rrh1:rollershutter"}
+Rollershutter rmotor2 "Kitchen North [%s]" (Spare)                [Blinds] {channel="enocean:rollershutter:ftdiroof:rrh2:rollershutter"}
+Rollershutter rmotor3 "Bed Balcony [%s]" /*(RfBed)*/                    [Blinds] {channel="enocean:rollershutter:ftdiroof:rrh3:rollershutter"}
+Rollershutter rmotor4 "Bed Seperate [%s]" /*(RfBed)*/                    [Blinds] {channel="enocean:rollershutter:ftdiroof:rrh4:rollershutter"}
+
+
+//FMZ
+
+Switch rhotwaterele "HOT WATER Electrical" <water> /*(All,Rf,RfBath,Ff,FfMBath,FfBath1,FfBath2)*/    
+   [HVAC] {channel="enocean:classicDevice:ftdiroof:rfmz1:virtualSwitchAF1",
+           channel="enocean:classicDevice:ftdiroof:rfmz1:FMZ1Listener",autoupdate="true"}
+Switch rhotwatermech "HOT WATER Mech"      <water> (Spare)       [HVAC] {channel="enocean:classicDevice:ftdiroof:rfmz2:virtualSwitchAF2",channel="enocean:classicDevice:ftdiroof:rfmz2:FMZ2Listener"}//,autoupdate="true"}
+Switch rrecwater "Rec Water ftn" <pump> (Spare)                 [HVAC] {channel="enocean:classicDevice:ftdiroof:rftn1:virtualSwitchAx",channel="enocean:classicDevice:ftdiroof:rftn1:FTNListener"}//,autoupdate="true"}
+//Switch test "test" <water> (RfBath)       [HVAC] {channel="enocean:genericThing:ftdiroof:gtfmz:genericSwitch",autoupdate="true"}
+//Switch rhotwaterele "HOT WATER Electrical" <water> (All,Rf,RfBath)       [HVAC] {channel="enocean:genericThing:ftdiroof:rfmz1:genericSwitch",autoupdate="true"}
+//Switch rhotwatermech "HOT WATER Mech" <water> (All,Rf,RfBath)            [HVAC] {channel="enocean:genericThing:ftdiroof:rfmz2:genericSwitch",autoupdate="true"}
+//Switch rrecwater "Rec Water" <pump> (All,Rf,RfBath)                      [HVAC]{channel="enocean:genericThing:ftdiroof:rftn1:genericSwitch",autoupdate="true"}
+
+Number renergy1i "Roof instant power [%.2f W]" <Energy> (meter) {channel="enocean:automatedMeterSensor:ftdiroof:renergy1:instantpower"}
+Number renergy1t "Roof total power [%.2f KWh]" <Energy> (meter) {channel="enocean:automatedMeterSensor:ftdiroof:renergy1:totalusage"}

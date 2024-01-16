@@ -1,0 +1,91 @@
+import org.openhab.core.model.script.ScriptServiceUtil
+
+val checkTimeForEnable1 = [
+    String TimerNumber,
+    SwitchItem Actor |
+    var NumberItem  timerHours = ScriptServiceUtil.getItemRegistry.getItem("timerHours" + TimerNumber)
+    var NumberItem  timerMinues = ScriptServiceUtil.getItemRegistry.getItem("timerMinues" + TimerNumber)
+    if(
+      (now.getHour() == (timerHours.state as DecimalType).intValue)
+      && 
+      (now.getMinute()-(timerMinues.state as DecimalType).intValue)>-3
+      &&
+      (now.getMinute()-(timerMinues.state as DecimalType).intValue)<3
+      //&&
+      //Actor.state==OFF
+      ){
+        Actor.sendCommand(OFF)
+
+      }
+
+]
+
+rule "Timeclock_Outdoor_Light_OFF"
+//Rules run evrey 1 mins in order to update 
+when
+	//Runs every minute
+    Time cron "0 */1 * * * ?" 
+then
+  if(vaOutdoorLights.state==ON){
+    checkTimeForEnable1.apply("4",FfOut)
+    checkTimeForEnable1.apply("4",RfOut)
+
+  }
+
+end
+
+rule "Outdoor Light On"
+when
+    //Channel 'astro:sun:home:rise#event' triggered START
+    //Item Day_Phase changed from CIVIL_DUSK to NAUTIC_DUSK
+    Item Day_Phase changed from DAYLIGHT to SUN_SET
+    //astro:sun:home:astroDusk#event
+then
+    logInfo("RULE", "Astro funct Outdoor ON Lights")
+    FfOut.sendCommand(ON)
+    RfOut.sendCommand(ON)
+end
+
+
+
+rule "OutDoorLights FF & ROOF OFF ON DAY"
+  when
+    Item FfOut changed from OFF to ON
+    or
+    Item RfOut changed from OFF to ON
+    or
+    Item vaOutdoorLights changed from OFF to ON
+    or
+    Item vaOutdoorLights changed from ON to OFF
+
+
+  then
+  if(vaOutdoorLights.state==ON){
+  if (now.getHour>1 && now.getHour < 15){
+    //Thread::sleep(timeDelayOffOutLights)
+    Thread::sleep(1000)
+    logInfo("RULE", "Day Lights Out FF & ROOF need to turn OFF")
+    FfOut.sendCommand(OFF)
+    Thread::sleep(1000)
+    RfOut.sendCommand(OFF)
+  }
+  }
+end
+
+rule "Outdoor Light Close at 22 59 on clock"
+  when
+  //http://www.cronmaker.com/;jsessionid=node08zj2s80xttnj1822lewt5utvl2121207.node0?0
+  Time cron "0 59 23 1/1 * ? *" //daily at 23:59 am
+
+  //
+  then
+    if(vaOutdoorLights.state==ON){
+    logInfo("RULE", "Timer OFF Outdoor F  F & ROOF Lights")
+    FfOut.sendCommand(OFF)
+    Thread::sleep(1000)
+    RfOut.sendCommand(OFF)
+
+    }
+end
+
+

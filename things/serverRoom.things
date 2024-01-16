@@ -1,0 +1,99 @@
+Bridge enocean:bridge:ftdis "FTDI-Server"[path="/dev/ttyUSB_DEVICE_SERVER",espVersion="ESP2",rs485BaseId="00003200",rs485=true]{
+   //3201
+
+   Thing centralCommand scc01 "S/FSR2X-1A" @ "DOOR-ACCESS" [ enoceanId="00000004", senderIdOffset=1, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=true, suppressRepeating=false ] 
+   Thing centralCommand scc02 "S/FSR2X-1B" @ "DOOR-ACCESS" [ enoceanId="00000005", senderIdOffset=2, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=true, suppressRepeating=false ] 
+
+   Thing centralCommand scc03 "S/FSR2X-2A" @ "DOOR-ACCESS" [ enoceanId="00000006", senderIdOffset=3, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=true, suppressRepeating=false ] 
+   Thing centralCommand scc04 "S/FSR2X-2B" @ "DOOR-ACCESS" [ enoceanId="00000007", senderIdOffset=4, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=true, suppressRepeating=false ] 
+
+   Thing centralCommand scc05 "S/FSR2X-3A" @ "DOOR-ACCESS" [ enoceanId="00000008", senderIdOffset=5, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=true, suppressRepeating=false ] 
+   Thing centralCommand scc06 "S/FSR2X-3B" @ "DOOR-ACCESS" [ enoceanId="00000009", senderIdOffset=6, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=true, suppressRepeating=false ] 
+
+
+   Thing genericThing sfmz1   "S/FMZ14/1" @ "DOOR-ACCESS"  [ enoceanId="0000000A", senderIdOffset=7,  sendingEEPId="F6_FF_FF", receivingEEPId="F6_FF_FF"] {
+    Channels:
+        Type genericSwitch : genericSwitch [transformationType="MAP", transformationFunction="FMZ.map"]
+     }
+
+   Thing genericThing sfmz2   "S/FMZ14/2" @ "DOOR-ACCESS"  [ enoceanId="0000000B", senderIdOffset=8,  sendingEEPId="F6_FF_FF", receivingEEPId="F6_FF_FF"] {
+    Channels:
+        Type genericSwitch : genericSwitch [transformationType="MAP", transformationFunction="FMZ.map"]
+     }
+
+   Thing genericThing sfmz3   "S/FMZ14/3" @ "DOOR-ACCESS"  [ enoceanId="0000000C", senderIdOffset=9,  sendingEEPId="F6_FF_FF", receivingEEPId="F6_FF_FF"] {
+    Channels:
+        Type genericSwitch : genericSwitch [transformationType="MAP", transformationFunction="FMZ.map"]
+     }
+
+   Thing genericThing sfmz4   "S/FMZ14/4" @ "DOOR-ACCESS"  [ enoceanId="0000000D", senderIdOffset=10,  sendingEEPId="F6_FF_FF", receivingEEPId="F6_FF_FF"] {
+    Channels:
+        Type genericSwitch : genericSwitch [transformationType="MAP", transformationFunction="FMZ.map"]
+     }
+
+   Thing genericThing sfmz5   "S/FMZ14/5" @ "DOOR-ACCESS"  [ enoceanId="0000000E", senderIdOffset=11,  sendingEEPId="F6_FF_FF", receivingEEPId="F6_FF_FF"] {
+    Channels:
+        Type genericSwitch : genericSwitch [transformationType="MAP", transformationFunction="FMZ.map"]
+     }
+
+   Thing genericThing sfmz6   "S/FMZ14/6" @ "DOOR-ACCESS"  [ enoceanId="0000000F", senderIdOffset=12,  sendingEEPId="F6_FF_FF", receivingEEPId="F6_FF_FF"] {
+    Channels:
+        Type genericSwitch : genericSwitch [transformationType="MAP", transformationFunction="FMZ.map"]
+     }
+
+   Thing genericThing sfmz7   "S/FMZ14/7" @ "DOOR-ACCESS"  [ enoceanId="00000010", senderIdOffset=13,  sendingEEPId="F6_FF_FF", receivingEEPId="F6_FF_FF"] {
+    Channels:
+        Type genericSwitch : genericSwitch [transformationType="MAP", transformationFunction="FMZ.map"]
+     }
+
+   Thing genericThing sfmz8   "S/FMZ14/8" @ "DOOR-ACCESS"  [ enoceanId="00000011", senderIdOffset=14,  sendingEEPId="F6_FF_FF", receivingEEPId="F6_FF_FF"] {
+    Channels:
+        Type genericSwitch : genericSwitch [transformationType="MAP", transformationFunction="FMZ.map"]
+     }
+
+   Thing genericThing sfmz9   "S/FMZ14/9" @ "DOOR-ACCESS"  [ enoceanId="00000012", senderIdOffset=15,  sendingEEPId="F6_FF_FF", receivingEEPId="F6_FF_FF"] {
+    Channels:
+        Type genericSwitch : genericSwitch [transformationType="MAP", transformationFunction="FMZ.map"]
+     }
+
+   Thing genericThing sfmz10   "S/FMZ14/10" @ "DOOR-ACCESS"  [ enoceanId="00000013", senderIdOffset=16,  sendingEEPId="F6_FF_FF", receivingEEPId="F6_FF_FF"] {
+    Channels:
+        Type genericSwitch : genericSwitch [transformationType="MAP", transformationFunction="FMZ.map"]
+     }
+
+   Thing automatedMeterSensor energy1 "S/ENERGY/1" @ "METER" [enoceanId="00000014",receivingEEPId="A5_12_01"]
+   Thing automatedMeterSensor energy2 "S/ENERGY/2" @ "METER" [enoceanId="00000015",receivingEEPId="A5_12_01"]
+   Thing automatedMeterSensor energy3 "S/ENERGY/3" @ "METER" [enoceanId="00000016",receivingEEPId="A5_12_01"]
+
+
+   Thing genericThing sfts1a "S/FTS14-EM/1A" @ "sensor" [ enoceanId="00001001", sendingEEPId="F6_FF_FF", receivingEEPId="F6_FF_FF" ] {
+    Channels:
+        Type genericSwitch : genericSwitch [transformationType="MAP", transformationFunction="fsm70.map"]
+     }
+
+   Thing genericThing sfts1b "S/FTS14-EM/1B" @ "sensor" [ enoceanId="00001002", sendingEEPId="F6_FF_FF", receivingEEPId="F6_FF_FF" ] {
+    Channels:
+        Type genericSwitch : genericSwitch [transformationType="MAP", transformationFunction="fsm70.map"]
+     }
+
+   Thing genericThing sfts1c "S/FTS14-EM/1C" @ "sensor" [ enoceanId="00001003", sendingEEPId="F6_FF_FF", receivingEEPId="F6_FF_FF" ] {
+    Channels:
+        Type genericSwitch : genericSwitch [transformationType="MAP", transformationFunction="fsm70.map"]
+     }
+
+   Thing genericThing sfts1d "S/FTS14-EM/1D" @ "sensor" [ enoceanId="00001004", sendingEEPId="F6_FF_FF", receivingEEPId="F6_FF_FF" ] {
+    Channels:
+        Type genericSwitch : genericSwitch [transformationType="MAP", transformationFunction="fsm70.map"]
+     }
+
+   Thing genericThing sfts1e "S/FTS14-EM/1E" @ "sensor" [ enoceanId="00001005", sendingEEPId="F6_FF_FF", receivingEEPId="F6_FF_FF" ] {
+    Channels:
+        Type genericSwitch : genericSwitch [transformationType="MAP", transformationFunction="fsm70.map"]
+     }
+
+   Thing genericThing sfts1f "S/FTS14-EM/1F" @ "sensor" [ enoceanId="00001006", sendingEEPId="F6_FF_FF", receivingEEPId="F6_FF_FF" ] {
+    Channels:
+        Type genericSwitch : genericSwitch [transformationType="MAP", transformationFunction="fsm70.map"]
+     }
+   
+}

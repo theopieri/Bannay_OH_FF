@@ -1,0 +1,134 @@
+
+//Wireless Switch
+//Switch wirelessSwitchUR "Wireless switch UP RIGHT" <light> (Test) {channel="enocean:genericThing:ftdi:gateUR:genericSwitch",autoupdate="true"}
+//Switch wirelessSwitchDR "Wireless switch DOWN RIGHT" <light> (Test) {channel="enocean:genericThing:ftdi:gateDR:genericSwitch",autoupdate="true"}
+
+Switch fbswitch1 "Master Bath Hot Water Switch" (Spare) { channel="enocean:rockerSwitch:ftdiff:fbs1:rockerswitchB"} //70/50
+
+Switch fPir1  "M.BATH W.C [MAP(pir.map):%s]" <motion>  (Sensors) [Presence] {channel="enocean:lightTemperatureOccupancySensor:ftdiff:fpir1:motionDetection"}
+Switch fPir2  "M.BATH  [MAP(pir.map):%s]" <motion>  (Sensors) [Presence] {channel="enocean:lightTemperatureOccupancySensor:ftdiff:fpir2:motionDetection"}
+Switch fPir3  "Raphael BATH [MAP(pir.map):%s]" <motion>  (Sensors) [Presence] {channel="enocean:lightTemperatureOccupancySensor:ftdiff:fpir3:motionDetection"}
+Switch fPir4  "HALLWAY [MAP(pir.map):%s]" <motion>  (Sensors) [Presence] {channel="enocean:lightTemperatureOccupancySensor:ftdiff:fpir4:motionDetection"}
+Switch fPir5  "GUEST W.C [MAP(pir.map):%s]" <motion>  (Sensors) [Presence] {channel="enocean:lightTemperatureOccupancySensor:ftdiff:fpir5:motionDetection"}
+Switch fPir6  "LAUNDRY [MAP(pir.map):%s]" <motion>  (Sensors) [Presence] {channel="enocean:lightTemperatureOccupancySensor:ftdiff:fpir6:motionDetection"}
+Switch fPir7  "FF STAIRS [MAP(pir.map):%s]" <motion>  (Sensors) [Presence] {channel="enocean:lightTemperatureOccupancySensor:ftdiff:fpir7:motionDetection"}
+Switch fPir8  "FF TO ROOF STAIRS [MAP(pir.map):%s]" <motion>  (Sensors) [Presence] {channel="enocean:lightTemperatureOccupancySensor:ftdiff:fpir8:motionDetection"}
+//Dimmers
+Dimmer fdimmer1 "M.Bed Entr Spot [%.0f ]" <slider> (FfMBed)   [Light] {channel="enocean:centralCommand:ftdiff:fdm1:dimmer"}
+Dimmer fdimmer2 "M.Bed Spot [%.0f ]" <slider> (FfMBed)        [Light] {channel="enocean:centralCommand:ftdiff:fdm2:dimmer"}
+Dimmer fdimmer3 "M.BATH SHOWER [%.0f ]" <slider> (FfMBed)    [Light] {channel="enocean:centralCommand:ftdiff:fdm3:dimmer"}
+Dimmer fdimmer4 "Raphael BATH SPOT [%.0f ]" <slider> (FfBed1)  [Light] {channel="enocean:centralCommand:ftdiff:fdm4:dimmer"}
+Dimmer fdimmer5 "Raphael SPOT [%.0f ]" <slider> (FfBed1)        [Light] {channel="enocean:centralCommand:ftdiff:fdm5:dimmer"}
+Dimmer fdimmer6 "GUEST WC SPOT [%.0f ]" <slider> (FfLaun)     [Light] {channel="enocean:centralCommand:ftdiff:fdm6:dimmer"}
+Dimmer fdimmer7 "Dining Spot [%.0f ]" <slider> (FfDin)        [Light] {channel="enocean:centralCommand:ftdiff:fdm7:dimmer"}
+Dimmer fdimmer8 "Kitchen Spot [%.0f ]" <slider> (FfKit)       [Light] {channel="enocean:centralCommand:ftdiff:fdm8:dimmer"}
+Dimmer fdimmer9 "Spare-L45 [%.0f ]" <slider> (Spare)             [Light] {channel="enocean:centralCommand:ftdiff:fdm8:dimmer"}
+
+//ON-OFF FSR14-4X
+Switch fswitch1  "M.BATH W.C" <light> (FfMBed)               [Light] {channel="enocean:centralCommand:ftdiff:fcc01:generalSwitch"} 
+Switch fswitch2  "M.BATH ENTRANCE" <light> (FfMBed)          [Light] {channel="enocean:centralCommand:ftdiff:fcc02:generalSwitch"} 
+Switch fswitch3  "M.BATH MIRROR" <light> /*(FfMBed)*/            [Light] {channel="enocean:centralCommand:ftdiff:fcc03:generalSwitch"} 
+Switch fswitch4  "F/FSR4X-1D" <light> (Spare)                    [Light] {channel="enocean:centralCommand:ftdiff:fcc04:generalSwitch"} 
+Switch fsswitch4 "STATUS F/FSR4X-1D"  <contact>  (Spare)   { channel="enocean:genericThing:ftdiff:fscc04:genericSwitch"}
+Switch fswitch5  "Raphael BATH  MIRROR" <light> /*(FfBed1)*/       [Light] {channel="enocean:centralCommand:ftdiff:fcc05:generalSwitch"} 
+Switch fswitch6  "Raphael LED" <light> (FfBed1)                 [Light] {channel="enocean:centralCommand:ftdiff:fcc06:generalSwitch"} 
+Switch fswitch7  "Raphael WARDROBE" <light> (FfBed1)            [Light] {channel="enocean:centralCommand:ftdiff:fcc07:generalSwitch"} 
+Switch fswitch8  "Dana OFFICE" <light> (FfBed2)             [Light] {channel="enocean:centralCommand:ftdiff:fcc08:generalSwitch"} 
+
+Switch fswitch9  "Dana  WARDROBE" <light> (FfBed2)          [Light] {channel="enocean:centralCommand:ftdiff:fcc09:generalSwitch"} 
+Switch fswitch10 "Dana  BATH ENTRANCE" <light> (FfBed2)    [Light] {channel="enocean:centralCommand:ftdiff:fcc10:generalSwitch"} 
+Switch fswitch11 "Dana  BATH SHOWER" <light> (FfBed2)      [Light] {channel="enocean:centralCommand:ftdiff:fcc11:generalSwitch"} 
+Switch fswitch12 "Dana  BATH MIRROR" <light> /*(FfBed2)*/      [Light] {channel="enocean:centralCommand:ftdiff:fcc12:generalSwitch"} 
+
+Switch fswitch13  "GUEST WC MIRROR" <light> /*(FfLaun)*/          [Light] {channel="enocean:centralCommand:ftdiff:fcc13:generalSwitch"} 
+Switch fswitch14 "CORRIDOR " <light> (FfLaun)                 [Light] {channel="enocean:centralCommand:ftdiff:fcc14:generalSwitch"} 
+Switch fswitch15 "LAUNDRY" <light> (FfLaun)                   [Light] {channel="enocean:centralCommand:ftdiff:fcc15:generalSwitch"} 
+Switch fswitch16 "LIFT AREA" <light> (FfLiv)                  [Light] {channel="enocean:centralCommand:ftdiff:fcc16:generalSwitch"} 
+
+Switch fswitch17  "LIVING SPOT" <light> (FfLiv)               [Light] {channel="enocean:centralCommand:ftdiff:fcc17:generalSwitch"} 
+Switch fswitch18 "LIVING GARDER LOW" <light> (FfLiv)          [Light] {channel="enocean:centralCommand:ftdiff:fcc18:generalSwitch"} 
+Switch fswitch19 "F/FSR4X-5C" <light> (Spare)                    [Light] {channel="enocean:centralCommand:ftdiff:fcc19:generalSwitch"} 
+Switch fswitch20 "F/FSR4X-5D" <light> (Spare)                    [Light] {channel="enocean:centralCommand:ftdiff:fcc20:generalSwitch"} 
+
+Switch fswitch21  "KITCHEN PEND" <light> (FfKit)              [Light] {channel="enocean:centralCommand:ftdiff:fcc21:generalSwitch"} 
+Switch fswitch22 "F/FSR4X-6B" <light> (Spare)                 [Light] {channel="enocean:centralCommand:ftdiff:fcc22:generalSwitch"} 
+Switch fswitch23 "F/FSR4X-6C" <light> (Spare)                    [Light] {channel="enocean:centralCommand:ftdiff:fcc23:generalSwitch"} 
+Switch fswitch24 "KITCHEN COUNTER" <light> (FfKit)            [Light] {channel="enocean:centralCommand:ftdiff:fcc24:generalSwitch"} 
+
+Switch fswitch25  "BALCONY Dana Spike" <light> (FfOut)       [Light] {channel="enocean:centralCommand:ftdiff:fcc25:generalSwitch"} 
+Switch fswitch26 "F/BALCONY WEST SPOT" <light> (Spare)           [Light] {channel="enocean:centralCommand:ftdiff:fcc26:generalSwitch"} 
+Switch fswitch27 "F/BALCONY WEST WALL" <light> (Spare)           [Light] {channel="enocean:centralCommand:ftdiff:fcc27:generalSwitch"} 
+Switch fswitch28 "BALCONY M.BED Spike" <light> (FfOut)       [Light] {channel="enocean:centralCommand:ftdiff:fcc28:generalSwitch"} 
+
+Switch fswitch29  "BALCONY M.BED FAN SP 1" <fan> (FfMBed)        [Light] {channel="enocean:centralCommand:ftdiff:fcc29:generalSwitch"} 
+Switch fswitch30 "BALCONY M.BED LED" <light> (FfMBed,FfOut)          [Light] {channel="enocean:centralCommand:ftdiff:fcc30:generalSwitch"} 
+Switch fswitch31 "F/FSR4X-8C" <light> (Spare)                    [Light] {channel="enocean:centralCommand:ftdiff:fcc31:generalSwitch"} 
+Switch fswitch32 "BALCONY Raphael" <light> (FfOut)         [Light] {channel="enocean:centralCommand:ftdiff:fcc32:generalSwitch"} 
+
+Switch fswitch33  "FF Stairs Spot" <light> (Stairs)           [Light] {channel="enocean:centralCommand:ftdiff:fcc33:generalSwitch"} 
+Switch fswitch34 "FF Stairs Wall" <light> (Stairs)            [Light] {channel="enocean:centralCommand:ftdiff:fcc34:generalSwitch"} 
+Switch fswitch35 "F/FSR4X-9C" <light> (Spare)                    [Light] {channel="enocean:centralCommand:ftdiff:fcc35:generalSwitch"} 
+Switch fswitch36 "Outdoor Stairs to 2ND" <light> (FfOut)         [Light] {channel="enocean:centralCommand:ftdiff:fcc36:generalSwitch"} 
+
+Switch fswitch37  "M.Bed Fan SP 1" <fan> /*(FfMBed)*/             [Light] {channel="enocean:centralCommand:ftdiff:fcc37:generalSwitch"} 
+Switch fswitch38 "M.Bed Fan SP 2" <fan> (Spare)              [Light] {channel="enocean:centralCommand:ftdiff:fcc38:generalSwitch"} 
+
+Switch fswitch39 "M.Bed  LED" <light> (FfMBed)                [Light] {channel="enocean:centralCommand:ftdiff:fcc39:generalSwitch"} 
+Switch fswitch40 "M.Bed Wardobe" <light> (FfMBed)            [Light] {channel="enocean:centralCommand:ftdiff:fcc40:generalSwitch"} 
+
+Switch fswitch41 "Raphael Fan SP 1" <fan> /*(FfBed1)*/              [Light] {channel="enocean:centralCommand:ftdiff:fcc41:generalSwitch"} 
+Switch fswitch42 "Raphael Fan SP 2" <fan> (Spare)              [Light] {channel="enocean:centralCommand:ftdiff:fcc42:generalSwitch"} 
+
+Switch fswitch43 "Dana Fan SP 1" <fan> /*(FfBed2)*/             [Light] {channel="enocean:centralCommand:ftdiff:fcc43:generalSwitch"} 
+Switch fswitch44 "Dana Fan SP 2" <fan> (Spare)             [Light] {channel="enocean:centralCommand:ftdiff:fcc44:generalSwitch"} 
+
+Switch fswitch45 "Dana  SPOT" <light> (FfBed2)              [Light] {channel="enocean:centralCommand:ftdiff:fcc45:generalSwitch"} 
+Switch fswitch46 "Dana  LED" <light> (FfBed2)               [Light] {channel="enocean:centralCommand:ftdiff:fcc46:generalSwitch"} 
+
+Switch fswitch47 "KITCHEN-DINING LED" <light> (FfDin)   [Light] {channel="enocean:centralCommand:ftdiff:fcc47:generalSwitch"} 
+Switch fswitch48 "LIV-DIN LED" <light> (FfDin)          [Light] {channel="enocean:centralCommand:ftdiff:fcc48:generalSwitch"} 
+
+Switch fswitch49 "F/FSR2X-7A" <light> (Spare)                [Light] {channel="enocean:centralCommand:ftdiff:fcc49:generalSwitch"} 
+Switch fswitch50 "BALCONY LED" <light> (FfOut)     [Light] {channel="enocean:centralCommand:ftdiff:fcc50:generalSwitch"} 
+
+Switch fswitch51 "LANDING LIFT SPOT" <light> (Stairs)          [Light] {channel="enocean:centralCommand:ftdiff:fcc51:generalSwitch"} 
+Switch fswitch52 "USING FOR HOT WATER STATUS RF-F/FSR2X-8B" <light> (Spare)  [Light] {channel="enocean:centralCommand:ftdiff:fcc52:generalSwitch"} 
+
+Switch fswitch53 "M.BED WEST "  <poweroutlet_uk> (FfMBed)     [Light] {channel="enocean:centralCommand:ftdiff:fcc53:generalSwitch"} 
+Switch fswitch54 "M.BED EAST" <poweroutlet_uk> (FfMBed)       [Light] {channel="enocean:centralCommand:ftdiff:fcc54:generalSwitch"} 
+
+Switch fswitch55 "Raphael NORTH"  <poweroutlet_uk> (FfBed1)     [Light] {channel="enocean:centralCommand:ftdiff:fcc55:generalSwitch"} 
+Switch fswitch56 "Raphael SOUTH" <poweroutlet_uk> (FfBed1)      [Light] {channel="enocean:centralCommand:ftdiff:fcc56:generalSwitch"} 
+
+Switch fswitch57 "LIVING NORTH"  <poweroutlet_uk> (FfLiv)     [Light] {channel="enocean:centralCommand:ftdiff:fcc57:generalSwitch"} 
+Switch fswitch58 "LIVING SOUTH" <poweroutlet_uk> (FfLiv)      [Light] {channel="enocean:centralCommand:ftdiff:fcc58:generalSwitch"} 
+
+Switch fswitch59 "M.Bath Towel"  <radiator> /*(FfMBed)*/         [Light] {channel="enocean:centralCommand:ftdiff:fcc59:generalSwitch"} 
+Switch fswitch60 "Raphael Towel" <radiator> /*(FfBed1)*/           [Light] {channel="enocean:centralCommand:ftdiff:fcc60:generalSwitch"} 
+
+Switch fswitch61 "Dana Towel"  <radiator> /*(FfBed2)*/         [Light] {channel="enocean:centralCommand:ftdiff:fcc61:generalSwitch"} 
+Switch fswitch62 "Floor Heat" <radiator> (Spare) [HVAC] {channel="enocean:centralCommand:ftdiff:fcc62:generalSwitch"} 
+
+//FSB14
+Rollershutter fmotor1 "M.BED Window [%s]" /*(FfMBed)*/              [Blinds] {channel="enocean:rollershutter:ftdiff:frh1:rollershutter"}
+Rollershutter fmotor2 "M.BED Balcony [%s]" /*(FfMBed)*/              [Blinds] {channel="enocean:rollershutter:ftdiff:frh2:rollershutter"}
+
+Rollershutter fmotor3 "Raphael Window [%s]" /*(FfBed1)*/              [Blinds] {channel="enocean:rollershutter:ftdiff:frh3:rollershutter"}
+Rollershutter fmotor4 "Raphael Balcony [%s]" /*(FfBed1)*/               [Blinds] {channel="enocean:rollershutter:ftdiff:frh4:rollershutter"}
+
+Rollershutter fmotor5 "Dana [%s]" /*(FfBed2)*/                   [Blinds] {channel="enocean:rollershutter:ftdiff:frh5:rollershutter"}
+Rollershutter fmotor6 "Dining South [%s]" /*(FfDin)*/              [Blinds] {channel="enocean:rollershutter:ftdiff:frh6:rollershutter"}
+
+Rollershutter fmotor7 "Living Right [%s]" /*(FfLiv)*/                   [Blinds] {channel="enocean:rollershutter:ftdiff:frh7:rollershutter"}
+Rollershutter fmotor8 "Living Left [%s]" /*(FfLiv) */                 [Blinds] {channel="enocean:rollershutter:ftdiff:frh8:rollershutter"}
+
+Rollershutter fmotor9 "Kitchen A[%s]" (Spare)                  [Blinds] {channel="enocean:rollershutter:ftdiff:frh7:rollershutter"}
+Rollershutter fmotor10 "Kitchen B[%s]" (Spare)                 [Blinds] {channel="enocean:rollershutter:ftdiff:frh8:rollershutter"}
+
+
+//FMZ AND FTN
+
+Switch fhotwaterelec "HOT WATER Elec" <water> (Spare)  [HVAC] {channel="enocean:genericThing:ftdiff:ffmz1:genericSwitch"}
+Switch fhotwatermech "HOT WATER Mech" <water> (Spare)  [HVAC] {channel="enocean:genericThing:ftdiff:ffmz2:genericSwitch"}
+Switch frecwater "Rec Water" <pump> (Spare)  [HVAC] {channel="enocean:genericThing:ftdiff:fftn1:genericSwitch",autoupdate="true"}
+

@@ -1,0 +1,246 @@
+import org.openhab.core.model.script.ScriptServiceUtil
+// Variables for all Timeclocks
+var  timer1_hour = 6.0
+var  timer1_min = 10.0
+var  timer1_Duration = 60.0
+var  timer2_hour = 19.0
+var  timer2_min = 10.0
+var  timer2_Duration = 60.0
+var  timer3_hour = 21.0
+var  timer3_min = 10.0
+var  timer3_Duration = 60.0
+
+/*
+These Function Get the hour and the mins from the selection the sitemap and post 
+msg in the Text on the sitemap
+Has input for what timer
+*/
+val updateTimeOnText = [
+    String TimerNumber,
+    Number hour,
+    Number min,
+    Number duration
+    |
+    //Thread::sleep(1)
+    var String temp_message = ""
+    var NumberItem  timerHours = ScriptServiceUtil.getItemRegistry.getItem("timerHours" + TimerNumber)
+    var NumberItem  timerMinues = ScriptServiceUtil.getItemRegistry.getItem("timerMinues" + TimerNumber)
+    var NumberItem  timerAutoManual = ScriptServiceUtil.getItemRegistry.getItem("timerAutoManual" + TimerNumber)
+    var NumberItem  timerDuration = ScriptServiceUtil.getItemRegistry.getItem("timerDuration" + TimerNumber)
+    var StringItem timerStatus = ScriptServiceUtil.getItemRegistry.getItem("timerStatus"+ TimerNumber)// as StringItem
+
+    if(timerAutoManual.state==1){//AUTO MODE
+        //logInfo("RULE", "AUTO MODE:")
+        //logInfo("RULE", TimerNumber)
+        postUpdate(timerHours,hour) 
+        postUpdate(timerMinues,min)
+        postUpdate(timerDuration,duration) 
+        postUpdate(timerAutoManual,1)
+    }
+    else{
+        postUpdate(timerAutoManual,2)
+    }
+    temp_message = "H:" + temp_message + timerHours.state.format("%d") + ":"
+    temp_message = temp_message + "M:"+ timerMinues.state.format("%d")
+    postUpdate(timerAutoManual,timerAutoManual.state)
+    postUpdate(timerStatus, temp_message)
+]
+/*
+This Fuction compare mins now with the selection on the sitemap
+We can set more for one like -1 min or +1 ....
+*/
+val compMins = [
+    String TimerNumber|
+
+    //var NumberItem  timerHours = ScriptServiceUtil.getItemRegistry.getItem("timerHours" + TimerNumber)
+    var NumberItem  timerMinues = ScriptServiceUtil.getItemRegistry.getItem("timerMinues" + TimerNumber)
+    if( (now.getMinute()-(timerMinues.state as DecimalType).intValue)>-3
+       &&
+       (now.getMinute()-(timerMinues.state as DecimalType).intValue)<3
+    ){
+        //logInfo("RULE", "Mins True")
+        return("true")
+    }
+    else{
+        //logInfo("RULE", "Mins False")
+        return("false")
+    }    
+]
+/*
+Action
+*/
+val checkTimeForEnable = [
+    String TimerNumber,
+    String mins,
+    SwitchItem Actor |
+    var NumberItem  timerHours = ScriptServiceUtil.getItemRegistry.getItem("timerHours" + TimerNumber)
+    var NumberItem  timerDuration = ScriptServiceUtil.getItemRegistry.getItem("timerDuration" + TimerNumber)
+    //logInfo("RULE","checkTimeForEnable")
+    if(
+      (now.getHour() == (timerHours.state as DecimalType).intValue)
+      && 
+      mins=="true"
+      &&
+      Actor.state==OFF
+      ){
+        Actor.sendCommand(ON)
+        createTimer(now.plusMinutes((timerDuration.state as Number).intValue), [ |
+        Actor.sendCommand(OFF)
+        ])
+      }
+]
+
+rule "Timeclock_Frontend"
+//Rules run evrey 1 mins in order to update 
+when
+	//Runs every minute
+    Time cron "0 */1 * * * ?" 
+then
+
+    if(timerAutoManual1.state > 0){
+    updateTimeOnText.apply("1",timer1_hour,timer1_min,timer1_Duration)
+    var String mins = compMins.apply("1")
+    checkTimeForEnable.apply("1",mins,rhotwaterele)
+    }
+    else{
+        postUpdate(timerAutoManual1,0)
+    }
+    if(timerAutoManual2.state > 0){
+    updateTimeOnText.apply("2",timer2_hour,timer2_min,timer2_Duration)
+    var String mins = compMins.apply("2")
+    checkTimeForEnable.apply("2",mins,rhotwaterele)
+    }    
+    else{
+        postUpdate(timerAutoManual2,0)
+    }
+    if(timerAutoManual3.state > 0){
+    updateTimeOnText.apply("3",timer3_hour,timer3_min,timer3_Duration)
+    var String mins = compMins.apply("3")
+    checkTimeForEnable.apply("3",mins,rhotwaterele)
+    }
+    else{
+        postUpdate(timerAutoManual3,0)
+    }
+// Update status of the BUS SWITCH IN FF M.BATH FOR HOT WATER
+    /*if(rhotwaterele.state==ON){
+        fswitch52.sendCommand(ON)
+        logInfo("RULE","HOT WATER STATUS ON")
+    }
+    else{
+        fswitch52.sendCommand(OFF)
+        logInfo("RULE","HOT WATER STATUS OFF")
+    }
+    */
+end
+
+
+rule "Update HOT WATER Switch"
+when
+	Item rhotwaterele changed 
+then
+// Update status of the BUS SWITCH IN FF M.BATH FOR HOT WATER
+logInfo("RULE","HOT WATER STATUS 11")
+    if(rhotwaterele.state==ON){
+        fswitch52.sendCommand(ON)
+        logInfo("RULE","HOT WATER STATUS ON 11")
+    }
+    else{
+        fswitch52.sendCommand(OFF)
+        logInfo("RULE","HOT WATER STATUS OFF 11")
+       
+    }
+end
+
+rule "Bus Switch FF turn on Hot Water"
+when
+	Item fbswitch1 changed from OFF to ON
+then
+// Update status of the BUS SWITCH IN FF M.BATH FOR HOT WATER
+    rhotwaterele.sendCommand(ON)
+    logInfo("RULE","HOT WATER ON FROM SWITCH")
+end
+
+
+rule "Bus Switch FF turn off Hot Water"
+when
+	Item fbswitch1 changed from ON to OFF
+then
+// Update status of the BUS SWITCH IN FF M.BATH FOR HOT WATER
+    rhotwaterele.sendCommand(OFF)
+    logInfo("RULE","HOT WATER OFF FROM SWITCH")
+end
+
+
+
+/*rule "Roof HotWater ON"
+  when
+  //http://www.cronmaker.com/;jsessionid=node08zj2s80xttnj1822lewt5utvl2121207.node0?0
+  Time cron "0 0 6 1/1 * ? *" //daily at 06:00 am
+  or
+  Time cron "0 0 19 1/1 * ? *" //daily at 19:00 am
+  or
+  Time cron "0 0 23 1/1 * ? *" //daily at 23:00 am
+
+  //
+  then
+    rhotwaterele.sendCommand(ON)
+    logInfo("RULE", "Roof Hot Water ON")
+    
+end
+
+rule "Roof HotWater OFF"
+  when
+  //http://www.cronmaker.com/;jsessionid=node08zj2s80xttnj1822lewt5utvl2121207.node0?0
+  Time cron "0 0 7 1/1 * ? *" //daily at 07:00 am
+  or
+  Time cron "0 0 20 1/1 * ? *" //daily at 20:00 am
+  or
+  Time cron "0 40 23 1/1 * ? *" //daily at 23:40 am
+
+  //
+  then
+    rhotwaterele.sendCommand(OFF)
+    logInfo("RULE", "Roof Hot Water OFF")
+    
+end
+
+*/
+/*
+
+then
+    temp_message = ""
+    //chmod -R 777
+    var String cmd = '/etc/openhab/scripts/1.py'
+    var String cc =updateTimeOfDay.apply("Morning", "Night", false)
+    logInfo("RULE",cc)
+    if(timerAutoManual.state==2){//MANUAL
+        postUpdate(timerAutoManual,2)
+
+        temp_message = "H:" + temp_message + timerHours.state.format("%d") + ":"
+        temp_message = temp_message + "M:"+ timerMinues.state.format("%d")
+        logInfo("RULE", "Timeclock_MANUAL")
+        postUpdate(timerStatus, temp_message)
+
+        //var res = executeCommandLine(Duration.ofSeconds(5),"/usr/bin/python",cmd,timerHours.state.format("%d"),timerMinues.state.format("%d"));
+        //logInfo("RULE", res)
+    }
+    else{
+        if(timerAutoManual.state==1){//AUTO
+            postUpdate(timerAutoManual,1)
+            temp_message = "H:" + temp_message + timer1_hour + ":"
+            temp_message = temp_message + "M:"+ timer1_min
+            logInfo("RULE", "Timeclock_AUTO")
+            postUpdate(timerStatus, temp_message)
+            //var res = executeCommandLine(Duration.ofSeconds(5),"/usr/bin/python",cmd,timer1_hour,timer1_min);
+        }
+        else{
+            postUpdate(timerAutoManual,0)
+            logInfo("RULE", "Timeclock_OFF")
+        }
+
+    }
+
+    
+end
+
+*/

@@ -1,0 +1,1047 @@
+sitemap ff label="Banay-House" {
+    Frame label="Favorites and Scene"{
+       Group item=Ser
+        //Group item=Spare
+       Group item=scene label="Scenes" icon="party"{
+        Switch item=Gf  mappings=[ON="ON", OFF="OFF"]  //icon="mm_scene"
+        Switch item=Ff  mappings=[ON="ON", OFF="OFF"]  //icon="mm_scene"
+        Switch item=Rf  mappings=[ON="ON", OFF="OFF"]  //icon="mm_scene"
+        Switch item=GfOut  mappings=[ON="ON", OFF="OFF"] // icon="mm_scene"
+        Switch item=AcsGF  mappings=[ON="ON", OFF="OFF"]  //icon="mm_scene"
+        Switch item=AcsFF  mappings=[ON="ON", OFF="OFF"]  //icon="mm_scene"
+       }
+       Group item=meter
+       Default item=sswitch14
+       Default item=sswitch16
+    }
+    Frame label="Outdoor"{
+        Group item=GfPool { 
+            Frame label="Master Command"{
+                Switch item=GfPool label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+            }
+            Frame label="Lights"{
+                Default item=gswitch39
+                Default item=gswitch45
+                Default item=gswitch46
+                Default item=gswitch49
+                Default item=gswitch50
+                Default item=gswitch51
+                Default item=gswitch54
+                Default item=gswitch55
+                Default item=gswitch56
+                Default item=gswitch58
+                Default item=gswitch59
+                Default item=gswitch60
+            }
+        }
+        Group item=GfParking { 
+            Frame label="Master Command"{
+                Switch item=GfParking label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+            }
+            Frame label="Lights"{
+                Default item=gswitch25
+                Default item=gswitch27
+                Default item=gswitch32
+                Default item=gswitch44
+                Default item=gswitch52
+                Default item=gswitch53
+                Default item=gswitch57
+            }
+        }
+        Group item=GfGardFront { 
+            Frame label="Master Command"{
+                Switch item=GfGardFront label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+            }
+            Frame label="Lights"{
+                Default item=gswitch41
+                Default item=gswitch42
+                Default item=gswitch61
+                Default item=gswitch62
+            }
+        }
+        Group item=GfGardBack { 
+            Frame label="Master Command"{
+                Switch item=GfGardBack label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+            }
+            Frame label="Lights"{
+                Default item=gswitch28
+                Default item=gswitch47
+                Default item=gswitch48
+                Default item=g2switch7
+                Default item=g2switch6
+                Default item=g1switch10
+            }
+        }
+        Group item=GfVeranda { 
+            Frame label="Master Command"{
+                Switch item=GfVeranda label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+            }
+            Frame label="Lights"{
+                Default item=gswitch29
+                Default item=gswitch30
+                Default item=gswitch31
+                Default item=gswitch40
+                Default item=gswitch43
+                Default item=g1switch9
+            }
+        }
+        Group item=FfOut {
+                Frame label="Master Command"{
+                    Switch item=FfOut label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+                }
+                Frame label="Lights" {
+                    Default item=fswitch25 
+                    Default item=fswitch28
+                    Default item=fswitch30
+                    Default item=fswitch32                  
+                    Default item=fswitch36                  
+                    Default item=fswitch50                 
+                }
+            }
+            Group item=RfOut {
+                Frame label="Master Command"{
+                    Switch item=RfOut label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+                }
+                Frame label="Lights"{
+                    Default item=rswitch6
+                    Default item=rswitch7
+                    Default item=rswitch14
+                    Default item=rswitch15
+                    Default item=rswitch17
+                    Default item=rswitch18
+                    Default item=rswitch19
+                    Default item=rswitch20
+                    Default item=rswitch21
+
+                }
+
+            }
+    }
+    Frame label="GroundFloor"{
+   
+        Group item=GfKit {
+            Frame label="Master Command"{
+                Switch item=GfKit label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+            }
+            Frame label="Lights"{
+                Default item=gdimmer8
+                Default item=gswitch20
+            }
+            Frame label="Cooling"{
+            Switch item=AC1On
+            Selection item=AC1Mode mappings=[cool="Cool"
+                                          ,heat="Heat"
+                                          ,dry="Dry"
+                                          ,fan= "Fan"
+                                          //,auto="Auto"
+                                          ] visibility=[AC1On==ON]
+            Selection item=AC1Fan mappings=[l="Low"
+                                            ,m="Medium"
+                                            ,h="High"
+                                            ,t= "Top"
+                                            ,a="Auto"
+                                            ] visibility=[AC1On==ON]
+            Setpoint item=AC1Set minValue=16 maxValue=33 visibility=[AC1On==ON]
+            Text item=AC1Temp visibility=[AC1On==ON]
+                              //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                               valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"]
+        
+            }
+        }
+        Group item=GfLiv {
+            Frame label="Master Command"{
+                Switch item=GfLiv label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+            }
+            Frame label="Lights"{
+                Default item=gswitch34
+                Default item=gdimmer6
+                Default item=gswitch21
+                Default item=gswitch22
+                Default item=gswitch17
+                Default item=gswitch68
+            }
+            Frame label="Blinds"{
+                Default item=gmotor5
+                Default item=gmotor6
+            }
+            Frame label="Cooling"{
+            Switch item=AC2On
+            Selection item=AC2Mode mappings=[cool="Cool"
+                                          ,heat="Heat"
+                                          ,dry="Dry"
+                                          ,fan= "Fan"
+                                          //,auto="Auto"
+                                          ] visibility=[AC2On==ON]
+            Selection item=AC2Fan mappings=[l="Low"
+                                            ,m="Medium"
+                                            ,h="High"
+                                            ,t= "Top"
+                                            ,a="Auto"
+                                            ] visibility=[AC2On==ON]
+            Setpoint item=AC2Set minValue=16 maxValue=33 visibility=[AC2On==ON]
+            Text item=AC2Temp visibility=[AC2On==ON]
+            }
+        }
+
+        Group item=GfDin {
+            Frame label="Master Command"{
+                Switch item=GfDin label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+            }
+            Frame label="Lights"{
+                Default item=gdimmer7
+                Default item=gswitch23
+            }
+            Frame label="Blinds"{
+                Default item=gmotor7
+                Default item=gmotor8
+            }
+        }
+        Group item=GfBed1 { 
+            Frame label="Master Command"{
+                Switch item=GfBed1 label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+            }
+            Frame label="Room Lights"{
+                Default item=gdimmer2
+                Default item=gdimmer3
+                Default item=gswitch6
+                Default item=gswitch5
+            }
+            Frame label="Lamp-Socket"{
+                Default item=gswitch63
+                Default item=gswitch64
+            }
+            Frame label="Blinds"{
+                Default item=gmotor1
+            }
+            Frame label="Bath"{
+                Default item=gdimmer1  
+                Default item=gswitch1  
+                Default item=gswitch70  
+                Text item=gPir1
+                Default item=gluxlev1
+            }
+        }
+
+        Group item=Gf2Bed { 
+            Frame label="Master Command"{
+                Switch item=Gf2Bed label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+            }
+            Frame label="Room Lights"{
+                Default item=g2switch9
+                Default item=g2dimmer1
+                Default item=g2switch1
+                Default item=g2switch2
+                
+            }
+            Frame label="Lamp-Socket"{
+                Default item=g2switch11
+                Default item=g2switch12
+            }
+            Frame label="Blinds"{
+                Default item=g2motor1
+            }
+            Frame label="Bath"{
+                Default item=g2dimmer2  
+                Default item=g2switch14   
+                Text item=g2Pir1
+                Default item=g2luxlev1
+            }
+
+            Frame label="Cooling"{
+                Switch item=AC6On
+                Selection item=AC6Mode mappings=[cool="Cool"
+                                            ,heat="Heat"
+                                            ,dry="Dry"
+                                            ,fan= "Fan"
+                                            //,auto="Auto"
+                                            ] visibility=[AC6On==ON]
+                Selection item=AC6Fan mappings=[l="Low"
+                                                ,m="Medium"
+                                                ,h="High"
+                                                ,t= "Top"
+                                                ,a="Auto"
+                                                ] visibility=[AC6On==ON]
+                Setpoint item=AC6Set minValue=16 maxValue=33 visibility=[AC6On==ON]
+                Text item=AC6Temp visibility=[AC6On==ON]
+                                //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                                valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"]
+            }
+        }
+        //Group item=GfBath1
+        Group item=GfBed2 { 
+            Frame label="Master Command"{
+                Switch item=GfBed2 label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+            }
+            Frame label="Room Lights"{
+                Default item=gswitch35
+                Default item=gdimmer4
+                Default item=gswitch10
+                Default item=gswitch9
+                
+            }
+            Frame label="Lamp-Socket"{
+                Default item=gswitch65
+                Default item=gswitch66
+                Default item=gswitch67
+            }
+            Frame label="Blinds"{
+                Default item=gmotor4
+            }
+            Frame label="Bath"{
+                Default item=gdimmer5  
+                Default item=gswitch38  
+                Default item=gswitch69  
+                Text item=gPir2
+                Default item=gluxlev2
+            }
+            Frame label="Cooling"{
+                Switch item=AC7On
+                Selection item=AC7Mode mappings=[cool="Cool"
+                                            ,heat="Heat"
+                                            ,dry="Dry"
+                                            ,fan= "Fan"
+                                            //,auto="Auto"
+                                            ] visibility=[AC7On==ON]
+                Selection item=AC7Fan mappings=[l="Low"
+                                                ,m="Medium"
+                                                ,h="High"
+                                                ,t= "Top"
+                                                ,a="Auto"
+                                                ] visibility=[AC7On==ON]
+                Setpoint item=AC7Set minValue=16 maxValue=33 visibility=[AC7On==ON]
+                Text item=AC7Temp visibility=[AC7On==ON]
+                                //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                                valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                }
+        }
+        //Group item=GfBath2
+        
+        /*Group item=Gf1Liv { 
+                Frame label="Master Command"{
+                    Switch item=Gf1Liv label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+                }
+                Frame label="Lights"{
+                    Default item=g1dimmer4
+                    Default item=g1switch5              
+                }    
+                Frame label="Blinds"{
+                    Default item=g1motor1
+                    Default item=g1motor2
+                    Default item=g1motor3
+                }                
+            }*/
+            Group item=Gf1Bed { 
+            Frame label="Master Command"{
+                Switch item=Gf1Bed label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+            }
+            Frame label="Room Lights"{
+                Default item=g1switch13
+                Default item=g1dimmer1
+                Default item=g1switch2
+                Default item=g1switch3
+                Default item=g1dimmer4
+                Default item=g1switch5 
+            }
+            Frame label="Lamp-Socket"{
+                Default item=g1switch15
+                Default item=g1switch16
+            }
+            Frame label="Blinds"{
+                Default item=g1motor1
+                Default item=g1motor2
+                Default item=g1motor3
+                Default item=g1motor4
+            }
+            Frame label="Bath"{
+                Default item=g1dimmer2    
+                Default item=g1switch19  
+                Text item=g1Pir1
+                Default item=g1luxlev1
+            }
+            Frame label="Cooling"{
+                Switch item=AC4On
+                Selection item=AC4Mode mappings=[cool="Cool"
+                                            ,heat="Heat"
+                                            ,dry="Dry"
+                                            ,fan= "Fan"
+                                            //,auto="Auto"
+                                            ] visibility=[AC4On==ON]
+                Selection item=AC4Fan mappings=[l="Low"
+                                                ,m="Medium"
+                                                ,h="High"
+                                                ,t= "Top"
+                                                ,a="Auto"
+                                                ] visibility=[AC4On==ON]
+                Setpoint item=AC4Set minValue=16 maxValue=33 visibility=[AC4On==ON]
+                Text item=AC4Temp visibility=[AC4On==ON]
+                                //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                                valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"]
+                }
+        }
+
+        Group item=GfLaun { 
+            Frame label="Master Command"{
+                Switch item=GfLaun label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+            }
+            Frame label="Lights"{
+                Default item=gswitch16
+                Default item=gswitch13
+                Default item=gswitch15               
+            }                    
+        }
+        Group item=Stairs {
+            Frame label="Stairs"{
+               Default item=fswitch51
+               Default item=fswitch33
+               Default item=fswitch34 
+               Default item=rswitch10 
+               Default item=rswitch11
+            }
+            Frame label="Sensor"{
+                Text item=fPir7
+                Text item=fPir8
+                Text item=rPir2
+            }
+        }
+    }
+    Frame label="First Floor"{
+           
+           Group item=FfKit {
+                Frame label="Master Command"{
+                    Switch item=FfKit label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+                }
+                Frame label="Lights"{
+                    Default item=fdimmer8
+                    Default item=fswitch21
+                    Default item=fswitch24
+                }
+            }
+            Group item=FfLiv {
+                Frame label="Master Command"{
+                    Switch item=FfLiv label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+                }
+                Frame label="Lights"{
+                    Default item=fswitch17
+                    Default item=fswitch18
+                    Default item=fswitch16
+                }
+                Frame label="Lamp-Socket"{
+                    Default item=fswitch57
+                    Default item=fswitch58
+                }
+                Frame label="Blinds"{
+                    Default item=fmotor7
+                    Default item=fmotor8
+                }
+                Frame label="Cooling"{
+
+                    Switch item=AC10On
+                    Selection item=AC10Mode mappings=[cool="Cool"
+                                                ,heat="Heat"
+                                                ,dry="Dry"
+                                                ,fan= "Fan"
+                                                //,auto="Auto"
+                                                ] visibility=[AC10On==ON]            
+                    Selection item=AC10Fan mappings=[l="Low"
+                                                    ,m="Medium"
+                                                    ,h="High"
+                                                    ,t= "Top"
+                                                    ,a="Auto"
+                                                    ] visibility=[AC10On==ON]
+                    Setpoint item=AC10Set minValue=16 maxValue=33 visibility=[AC10On==ON]
+                    Text item=AC10Temp visibility=[AC10On==ON]
+                                        //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                                        valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"]
+
+                        Switch item=AC12On
+                        Selection item=AC12Mode mappings=[cool="Cool"
+                                                    ,heat="Heat"
+                                                    ,dry="Dry"
+                                                    ,fan= "Fan"
+                                                    //,auto="Auto"
+                                                    ] visibility=[AC12On==ON]
+                        Selection item=AC12Fan mappings=[l="Low"
+                                                        ,m="Medium"
+                                                        ,h="High"
+                                                        ,t= "Top"
+                                                        ,a="Auto"
+                                                        ] visibility=[AC12On==ON]
+                    Setpoint item=AC12Set minValue=16 maxValue=33 visibility=[AC12On==ON]
+                    Text item=AC12Temp visibility=[AC12On==ON]
+                                        //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                                        valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"]
+
+                            
+                        
+                        Switch item=AC8On
+                        Selection item=AC8Mode mappings=[cool="Cool"
+                                                    ,heat="Heat"
+                                                    ,dry="Dry"
+                                                    ,fan= "Fan"
+                                                    //,auto="Auto"
+                                                    ] visibility=[AC8On==ON]
+                        Selection item=AC8Fan mappings=[l="Low"
+                                                        ,m="Medium"
+                                                        ,h="High"
+                                                        ,t= "Top"
+                                                        ,a="Auto"
+                                                        ] visibility=[AC8On==ON]
+                    Setpoint item=AC8Set minValue=16 maxValue=33 visibility=[AC8On==ON]
+                    Text item=AC8Temp visibility=[AC8On==ON]
+                                        //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                                        valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"]
+
+                }
+            }
+            Group item=FfDin {
+                Frame label="Master Command"{
+                    Switch item=FfDin label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+                }
+                Frame label="Lights"{
+                    Default item=fdimmer7
+                    Default item=fswitch47
+                    Default item=fswitch48
+                }
+
+                Frame label="Blinds"{
+                    Default item=fmotor6
+                }
+            }
+            Group item=FfMBed {
+                Frame label="Master Command"{
+                    Switch item=FfMBed label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+                }
+                Frame label="Room Lights" {
+                    Default item=fswitch37
+                    Default item=fdimmer1
+                    Default item=fdimmer2
+                    Default item=fswitch48                    
+                    Default item=fswitch39                    
+                    Default item=fswitch40                    
+                }
+                Frame label="Lamp-Socket"{
+                    Default item=fswitch53
+                    Default item=fswitch54
+                }
+                Frame label="Blinds"{
+                    Default item=fmotor1
+                    Default item=fmotor2
+                }
+                Frame label="Veranda"{
+                    Default item=fswitch29   
+                    Default item=fswitch30   
+                }
+                Frame label="Bath"{
+                    Default item=fdimmer3  
+                    Default item=fswitch1  
+                    Default item=fswitch2  
+                    Default item=fswitch3  
+                    Default item=fswitch59  
+                    Text item=fPir1
+                    Text item=fPir2
+                }
+                Frame label="Cooling"{
+                    Switch item=AC13On
+                    Selection item=AC13Mode mappings=[cool="Cool"
+                                                ,heat="Heat"
+                                                ,dry="Dry"
+                                                ,fan= "Fan"
+                                                //,auto="Auto"
+                                                ] visibility=[AC13On==ON]
+                    Selection item=AC13Fan mappings=[l="Low"
+                                                    ,m="Medium"
+                                                    ,h="High"
+                                                    ,t= "Top"
+                                                    ,a="Auto"
+                                                    ] visibility=[AC13On==ON]
+                Setpoint item=AC13Set minValue=16 maxValue=33 visibility=[AC13On==ON]
+                Text item=AC13Temp visibility=[AC13On==ON]
+                                    //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                                    valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"]
+                }
+            }
+            //Group item=FfMBath
+            Group item=FfBed1 {
+                Frame label="Master Command"{
+                    Switch item=FfBed1 label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+                }
+                Frame label="Room Lights" {
+                    Default item=fswitch41
+                    Default item=fdimmer5
+                    Default item=fswitch6
+                    Default item=fswitch7                  
+                }
+                Frame label="Lamp-Socket"{
+                    Default item=fswitch55
+                    Default item=fswitch56
+                }
+                Frame label="Blinds"{
+                    Default item=fmotor3
+                    Default item=fmotor4
+                }
+                Frame label="Bath"{
+                    Default item=fdimmer4  
+                    Default item=fswitch5  
+                    Default item=fswitch2  
+                    Default item=fswitch60  
+                    Text item=fPir3
+                }
+                Frame label="Cooling"{
+                    Switch item=AC11On
+                    Selection item=AC11Mode mappings=[cool="Cool"
+                                                ,heat="Heat"
+                                                ,dry="Dry"
+                                                ,fan= "Fan"
+                                                //,auto="Auto"
+                                                ] visibility=[AC11On==ON]            
+                    Selection item=AC11Fan mappings=[l="Low"
+                                                    ,m="Medium"
+                                                    ,h="High"
+                                                    ,t= "Top"
+                                                    ,a="Auto"
+                                                    ] visibility=[AC11On==ON]
+                    Setpoint item=AC11Set minValue=16 maxValue=33 visibility=[AC11On==ON]
+                    Text item=AC11Temp visibility=[AC11On==ON]
+                                        //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                                        valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"]
+
+                }
+            }
+            //Group item=FfBath1
+            Group item=FfBed2 {
+                Frame label="Master Command"{
+                    Switch item=FfBed2 label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+                }
+                Frame label="Room Lights" {
+                    Default item=fswitch43
+                    Default item=fswitch45                  
+                    Default item=fswitch46 
+                    Default item=fswitch8
+                    Default item=fswitch9
+                 
+                }
+                Frame label="Blinds"{
+                    Default item=fmotor5
+                }
+                Frame label="Bath"{
+                    Default item=fswitch10  
+                    Default item=fswitch11  
+                    Default item=fswitch12  
+                    Default item=fswitch61  
+                }
+
+                Frame label="Cooling"{
+                    Switch item=AC9On
+                    Selection item=AC9Mode mappings=[cool="Cool"
+                                                ,heat="Heat"
+                                                ,dry="Dry"
+                                                ,fan= "Fan"
+                                                //,auto="Auto"
+                                                ] visibility=[AC9On==ON]
+                    Selection item=AC9Fan mappings=[l="Low"
+                                                    ,m="Medium"
+                                                    ,h="High"
+                                                    ,t= "Top"
+                                                    ,a="Auto"
+                                                    ] visibility=[AC9On==ON]
+                    Setpoint item=AC9Set minValue=16 maxValue=33 visibility=[AC9On==ON]
+                    Text item=AC9Temp visibility=[AC9On==ON]
+                                        //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                                        valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"]      
+                }
+            }
+            //Group item=FfBath2
+            Group item=FfLaun {
+                Frame label="Master Command"{
+                    Switch item=FfLaun label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+                }
+                Frame label="Lights" {
+                    Default item=fswitch15 
+                    Default item=fswitch14
+                    Default item=fdimmer6
+                    Default item=fswitch13                  
+
+                }
+                Frame label="Sensors"{
+                    Text item=fPir4
+                    Text item=fPir5
+                    Text item=fPir6
+                }
+            }
+
+    }
+    Frame label="Second Floor"{
+           Group item=RfKit {
+                Frame label="Master Command"{
+                    Switch item=RfKit label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+                }
+                Frame label="Lights"{
+                    Default item=rdimmer2
+                    Default item=rdimmer4
+                    Default item=rdimmer5
+                }
+                /*Frame label="Blinds"{
+                        Default item=rmotor1
+                        Default item=rmotor2
+                }*/
+            }
+            Group item=RfBed {
+                Frame label="Master Command"{
+                    Switch item=RfBed label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+                }
+                Frame label="Lights"{
+                    Default item=rdimmer1
+                    Default item=rswitch1
+
+                }
+                Frame label="Lamp-Socket"{
+                    Default item=rswitch23
+                    Default item=rswitch24
+                }
+                Frame label="Blinds"{
+                    Default item=rmotor3
+                    Default item=rmotor4
+                }
+            }
+            Group item=RfBath {
+                Frame label="Master Command"{
+                    Switch item=RfBath label="Lights Command" mappings=[ON="ON", OFF="OFF"]  icon="mm_scene"
+                }
+                Frame label="Lights"{
+                    Default item=rdimmer3
+                    Default item=rswitch5
+                    Default item=rswitch3
+                }
+                Frame label="Water Power"{
+                    Default item=rswitch25
+                    Default item=rswitch26
+                    Default item=rhotwaterele
+                }
+                Frame label="Sensor"{
+                    Text item=rPir1
+                }
+            }
+    }
+
+    Frame label="Cooling" {
+        
+         //Group item=Hydrawise
+
+        Group item=AcsFF {
+
+            Switch item=AC8On
+            Selection item=AC8Mode mappings=[cool="Cool"
+                                          ,heat="Heat"
+                                          ,dry="Dry"
+                                          ,fan= "Fan"
+                                          //,auto="Auto"
+                                          ] visibility=[AC8On==ON]
+            Selection item=AC8Fan mappings=[l="Low"
+                                            ,m="Medium"
+                                            ,h="High"
+                                            ,t= "Top"
+                                            ,a="Auto"
+                                            ] visibility=[AC8On==ON]
+           Setpoint item=AC8Set minValue=16 maxValue=33 visibility=[AC8On==ON]
+           Text item=AC8Temp visibility=[AC8On==ON]
+                              //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                              valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"]
+
+            Switch item=AC9On
+            Selection item=AC9Mode mappings=[cool="Cool"
+                                          ,heat="Heat"
+                                          ,dry="Dry"
+                                          ,fan= "Fan"
+                                          //,auto="Auto"
+                                          ] visibility=[AC9On==ON]
+            Selection item=AC9Fan mappings=[l="Low"
+                                            ,m="Medium"
+                                            ,h="High"
+                                            ,t= "Top"
+                                            ,a="Auto"
+                                            ] visibility=[AC9On==ON]
+           Setpoint item=AC9Set minValue=16 maxValue=33 visibility=[AC9On==ON]
+           Text item=AC9Temp visibility=[AC9On==ON]
+                              //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                              valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"]
+
+
+            Switch item=AC10On
+            Selection item=AC10Mode mappings=[cool="Cool"
+                                          ,heat="Heat"
+                                          ,dry="Dry"
+                                          ,fan= "Fan"
+                                          //,auto="Auto"
+                                          ] visibility=[AC10On==ON]            
+            Selection item=AC10Fan mappings=[l="Low"
+                                            ,m="Medium"
+                                            ,h="High"
+                                            ,t= "Top"
+                                            ,a="Auto"
+                                            ] visibility=[AC10On==ON]
+           Setpoint item=AC10Set minValue=16 maxValue=33 visibility=[AC10On==ON]
+           Text item=AC10Temp visibility=[AC10On==ON]
+                              //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                              valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"]
+
+
+            Switch item=AC11On
+            Selection item=AC11Mode mappings=[cool="Cool"
+                                          ,heat="Heat"
+                                          ,dry="Dry"
+                                          ,fan= "Fan"
+                                          //,auto="Auto"
+                                          ] visibility=[AC11On==ON]            
+            Selection item=AC11Fan mappings=[l="Low"
+                                            ,m="Medium"
+                                            ,h="High"
+                                            ,t= "Top"
+                                            ,a="Auto"
+                                            ] visibility=[AC11On==ON]
+           Setpoint item=AC11Set minValue=16 maxValue=33 visibility=[AC11On==ON]
+           Text item=AC11Temp visibility=[AC11On==ON]
+                              //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                              valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"]
+
+
+            Switch item=AC12On
+            Selection item=AC12Mode mappings=[cool="Cool"
+                                          ,heat="Heat"
+                                          ,dry="Dry"
+                                          ,fan= "Fan"
+                                          //,auto="Auto"
+                                          ] visibility=[AC12On==ON]
+            Selection item=AC12Fan mappings=[l="Low"
+                                            ,m="Medium"
+                                            ,h="High"
+                                            ,t= "Top"
+                                            ,a="Auto"
+                                            ] visibility=[AC12On==ON]
+           Setpoint item=AC12Set minValue=16 maxValue=33 visibility=[AC12On==ON]
+           Text item=AC12Temp visibility=[AC12On==ON]
+                              //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                              valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"]
+
+
+            Switch item=AC13On
+            Selection item=AC13Mode mappings=[cool="Cool"
+                                          ,heat="Heat"
+                                          ,dry="Dry"
+                                          ,fan= "Fan"
+                                          //,auto="Auto"
+                                          ] visibility=[AC13On==ON]
+            Selection item=AC13Fan mappings=[l="Low"
+                                            ,m="Medium"
+                                            ,h="High"
+                                            ,t= "Top"
+                                            ,a="Auto"
+                                            ] visibility=[AC13On==ON]
+           Setpoint item=AC13Set minValue=16 maxValue=33 visibility=[AC13On==ON]
+           Text item=AC13Temp visibility=[AC13On==ON]
+                              //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                              valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"]
+
+
+
+        }
+
+        Group item=AcsGF {
+            
+            Switch item=AC1On
+            Selection item=AC1Mode mappings=[cool="Cool"
+                                          ,heat="Heat"
+                                          ,dry="Dry"
+                                          ,fan= "Fan"
+                                          //,auto="Auto"
+                                          ] visibility=[AC1On==ON]
+            Selection item=AC1Fan mappings=[l="Low"
+                                            ,m="Medium"
+                                            ,h="High"
+                                            ,t= "Top"
+                                            ,a="Auto"
+                                            ] visibility=[AC1On==ON]
+            Setpoint item=AC1Set minValue=16 maxValue=33 visibility=[AC1On==ON]
+            Text item=AC1Temp visibility=[AC1On==ON]
+                              //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                               valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"]
+        
+            Switch item=AC2On
+            Selection item=AC2Mode mappings=[cool="Cool"
+                                          ,heat="Heat"
+                                          ,dry="Dry"
+                                          ,fan= "Fan"
+                                          //,auto="Auto"
+                                          ] visibility=[AC2On==ON]
+            Selection item=AC2Fan mappings=[l="Low"
+                                            ,m="Medium"
+                                            ,h="High"
+                                            ,t= "Top"
+                                            ,a="Auto"
+                                            ] visibility=[AC2On==ON]
+            Setpoint item=AC2Set minValue=16 maxValue=33 visibility=[AC2On==ON]
+            Text item=AC2Temp visibility=[AC2On==ON]
+                              //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                               valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"]
+            /*
+            Switch item=AC3On
+            Selection item=AC3Mode mappings=[cool="Cool"
+                                          ,heat="Heat"
+                                          ,dry="Dry"
+                                          ,fan= "Fan"
+                                          //,auto="Auto"
+                                          ] visibility=[AC3On==ON]
+            Selection item=AC3Fan mappings=[l="Low"
+                                            ,m="Medium"
+                                            ,h="High"
+                                            ,t= "Top"
+                                            ,a="Auto"
+                                            ] visibility=[AC3On==ON]
+            Setpoint item=AC3Set minValue=16 maxValue=33 visibility=[AC3On==ON]
+            Text item=AC3Temp visibility=[AC3On==ON]
+                              //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                               valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"]
+            */
+            Switch item=AC4On
+            Selection item=AC4Mode mappings=[cool="Cool"
+                                          ,heat="Heat"
+                                          ,dry="Dry"
+                                          ,fan= "Fan"
+                                          //,auto="Auto"
+                                          ] visibility=[AC4On==ON]
+            Selection item=AC4Fan mappings=[l="Low"
+                                            ,m="Medium"
+                                            ,h="High"
+                                            ,t= "Top"
+                                            ,a="Auto"
+                                            ] visibility=[AC4On==ON]
+            Setpoint item=AC4Set minValue=16 maxValue=33 visibility=[AC4On==ON]
+            Text item=AC4Temp visibility=[AC4On==ON]
+                              //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                               valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"]
+
+            /*Switch item=AC5On
+            Selection item=AC5Mode mappings=[cool="Cool"
+                                          ,heat="Heat"
+                                          ,dry="Dry"
+                                          ,fan= "Fan"
+                                          //,auto="Auto"
+                                          ] visibility=[AC5On==ON]
+            Selection item=AC5Fan mappings=[l="Low"
+                                            ,m="Medium"
+                                            ,h="High"
+                                            ,t= "Top"
+                                            ,a="Auto"
+                                            ] visibility=[AC5On==ON]
+            Setpoint item=AC5Set minValue=16 maxValue=33 visibility=[AC5On==ON]
+            Text item=AC5Temp visibility=[AC5On==ON]
+                              //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                               valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"]
+            */
+            Switch item=AC6On
+            Selection item=AC6Mode mappings=[cool="Cool"
+                                          ,heat="Heat"
+                                          ,dry="Dry"
+                                          ,fan= "Fan"
+                                          //,auto="Auto"
+                                          ] visibility=[AC6On==ON]
+            Selection item=AC6Fan mappings=[l="Low"
+                                            ,m="Medium"
+                                            ,h="High"
+                                            ,t= "Top"
+                                            ,a="Auto"
+                                            ] visibility=[AC6On==ON]
+            Setpoint item=AC6Set minValue=16 maxValue=33 visibility=[AC6On==ON]
+            Text item=AC6Temp visibility=[AC6On==ON]
+                              //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                               valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"]
+
+            Switch item=AC7On
+            Selection item=AC7Mode mappings=[cool="Cool"
+                                          ,heat="Heat"
+                                          ,dry="Dry"
+                                          ,fan= "Fan"
+                                          //,auto="Auto"
+                                          ] visibility=[AC7On==ON]
+            Selection item=AC7Fan mappings=[l="Low"
+                                            ,m="Medium"
+                                            ,h="High"
+                                            ,t= "Top"
+                                            ,a="Auto"
+                                            ] visibility=[AC7On==ON]
+            Setpoint item=AC7Set minValue=16 maxValue=33 visibility=[AC7On==ON]
+            Text item=AC7Temp visibility=[AC7On==ON]
+                              //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                               valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"]       
+        
+        }
+    }
+
+    Frame label="Parameters"{
+        Group item=param{
+            Frame label="OUTDOOR LIGHTS"{
+            Selection item=timerHours4  mappings=[0.0="00", 1.0="01", 2.0="02", 3.0="03", 4.0="04", 5.0="05", 6.0="06", 7.0="07", 8.0="08", 9.0="09", 10.0="10",
+             11.0="11", 12.0="12", 13.0="13", 14.0="14", 15.0="15", 16.0="16", 17.0="17", 18.0="18", 19.0="19", 20.0="20", 21.0="21", 22.0="22", 23.0="23"]
+            Selection item=timerMinues4 mappings=[0.0="00", 10.0="10", 20.0="20", 30.0="30", 40.0="40", 50.0="50"]
+            
+            Switch item=vaOutdoorLights
+            }
+            Frame label="Rec. Water Frequency"{
+
+            Selection item=vaRecWaterCancel mappings=[0.0="DISABLE",15.0="15min",30.0="30mins",60.0="1Hour"]
+            }
+            
+            Frame label="Hot Water"{
+            Switch item=rhotwaterele
+            Switch item=timerAutoManual1 label="Timer 1" mappings=[0="OFF",1="Auto", 2="Manual"]
+            Text label="Next Schedule timer 1: [%s]" item=timerStatus1 visibility=[timerAutoManual1 > 0]
+            Selection item=timerHours1 visibility=[timerAutoManual1 > 1] label="Timer 1 Hours"   mappings=[0.0="00", 1.0="01", 2.0="02", 3.0="03", 4.0="04", 5.0="05", 6.0="06", 7.0="07", 8.0="08", 9.0="09", 10.0="10",
+             11.0="11", 12.0="12", 13.0="13", 14.0="14", 15.0="15", 16.0="16", 17.0="17", 18.0="18", 19.0="19", 20.0="20", 21.0="21", 22.0="22", 23.0="23"]
+            Selection item=timerMinues1 visibility=[timerAutoManual1 > 1] label="Timer 1 Minues" mappings=[0.0="00", 10.0="10", 20.0="20", 30.0="30", 40.0="40", 50.0="50"]
+            Selection item=timerDuration1 visibility=[timerAutoManual1 > 1] label="Timer 1 Duration" mappings=[30.0="30mins", 60.0="1Hour", 90.0="1.5Hour", 120.0="2Hours"]
+
+            Switch item=timerAutoManual2 label="Timer 2" mappings=[0="OFF",1="Auto", 2="Manual"]
+            Text label="Next Schedule timer 2: [%s]" item=timerStatus2 visibility=[timerAutoManual2 > 0]
+            Selection item=timerHours2 visibility=[timerAutoManual2 > 1] label="Timer 2 Hours"   mappings=[0.0="00", 1.0="01", 2.0="02", 3.0="03", 4.0="04", 5.0="05", 6.0="06", 7.0="07", 8.0="08", 9.0="09", 10.0="10",
+             11.0="11", 12.0="12", 13.0="13", 14.0="14", 15.0="15", 16.0="16", 17.0="17", 18.0="18", 19.0="19", 20.0="20", 21.0="21", 22.0="22", 23.0="23"]
+            Selection item=timerMinues2 visibility=[timerAutoManual2 > 1] label="Timer 2 Minues" mappings=[0.0="00", 10.0="10", 20.0="20", 30.0="30", 40.0="40", 50.0="50"]
+            Selection item=timerDuration2 visibility=[timerAutoManual2 > 1] label="Timer 2 Duration" mappings=[30.0="30mins", 60.0="1Hour", 90.0="1.5Hour", 120.0="2Hours"]
+        
+            Switch item=timerAutoManual3 label="Timer 3" mappings=[0="OFF",1="Auto", 2="Manual"]
+            Text label="Next Schedule timer 3: [%s]" item=timerStatus3 visibility=[timerAutoManual3 > 0]
+            Selection item=timerHours3 visibility=[timerAutoManual3 > 1] label="Timer 3 Hours"   mappings=[0.0="00", 1.0="01", 2.0="02", 3.0="03", 4.0="04", 5.0="05", 6.0="06", 7.0="07", 8.0="08", 9.0="09", 10.0="10",
+             11.0="11", 12.0="12", 13.0="13", 14.0="14", 15.0="15", 16.0="16", 17.0="17", 18.0="18", 19.0="19", 20.0="20", 21.0="21", 22.0="22", 23.0="23"]
+            Selection item=timerMinues3 visibility=[timerAutoManual3 > 1] label="Timer 3 Minues" mappings=[0.0="00", 10.0="10", 20.0="20", 30.0="30", 40.0="40", 50.0="50"]
+            Selection item=timerDuration3 visibility=[timerAutoManual3 > 1] label="Timer 3 Duration" mappings=[30.0="30mins", 60.0="1Hour", 90.0="1.5Hour", 120.0="2Hours"]
+            }
+        
+        }
+
+        Group item=gparam{
+           
+            Frame label="PIR DURATION"{
+            Selection item=timerDurgPir1 mappings=[0.0="DISABLE",1.0="2min",2.0="3mins",4.0="5mins",9.0="10mins", 14.0="15mins", 19.0="20mins", 59.0="1Hour"]
+            Selection item=timerDurgPir2 mappings=[0.0="DISABLE",1.0="2min",2.0="3mins",4.0="5mins",9.0="10mins", 14.0="15mins", 19.0="20mins", 59.0="1Hour"]
+            Selection item=timerDurgPir3 mappings=[0.0="DISABLE",1.0="2min",2.0="3mins",4.0="5mins",9.0="10mins", 14.0="15mins", 19.0="20mins", 59.0="1Hour"]
+            Selection item=timerDurgPir4 mappings=[0.0="DISABLE",1.0="2min",2.0="3mins",4.0="5mins",9.0="10mins", 14.0="15mins", 19.0="20mins", 59.0="1Hour"]
+            }
+            Frame label="OUTDOOR LIGHTS"{
+            
+            Selection item=gtimerHours1  mappings=[0.0="00", 1.0="01", 2.0="02", 3.0="03", 4.0="04", 5.0="05", 6.0="06", 7.0="07", 8.0="08", 9.0="09", 10.0="10",
+             11.0="11", 12.0="12", 13.0="13", 14.0="14", 15.0="15", 16.0="16", 17.0="17", 18.0="18", 19.0="19", 20.0="20", 21.0="21", 22.0="22", 23.0="23"]
+            Selection item=gtimerMinues1 mappings=[0.0="00", 10.0="10", 20.0="20", 30.0="30", 40.0="40", 50.0="50"]
+            
+            Selection item=gtimerHours2  mappings=[0.0="00", 1.0="01", 2.0="02", 3.0="03", 4.0="04", 5.0="05", 6.0="06", 7.0="07", 8.0="08", 9.0="09", 10.0="10",
+             11.0="11", 12.0="12", 13.0="13", 14.0="14", 15.0="15", 16.0="16", 17.0="17", 18.0="18", 19.0="19", 20.0="20", 21.0="21", 22.0="22", 23.0="23"]
+            Selection item=gtimerMinues2 mappings=[0.0="00", 10.0="10", 20.0="20", 30.0="30", 40.0="40", 50.0="50"]
+                        
+            Switch item=gvaOutdoorLights
+            }
+            Frame label="Rec. Water Frequency"{
+            Selection item=gvaRecWaterCancel mappings=[0.0="DISABLE",15.0="15min",30.0="30mins",60.0="1Hour"]
+            }
+        }
+        
+    }
+    
+}
+    

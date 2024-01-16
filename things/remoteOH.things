@@ -1,0 +1,2 @@
+Bridge remoteopenhab:server:ohgf "OH-gf server" [ host="10.110.1.251", port=8443, useHttps=true, trustedCertificate=true,username="admin",password="mm6374" ] {
+}

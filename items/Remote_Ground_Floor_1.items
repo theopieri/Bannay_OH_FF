@@ -1,0 +1,45 @@
+//Sensors
+
+Switch g1Pir1  "Gym BATH [MAP(pir.map):%s]" <motion>  (Sensors) [MotionDetector] {channel="remoteopenhab:server:ohgf:g1Pir1" } 
+Number g1luxlev1 "Gym BATH [%.1f lx]" <sunrise> (Sensors) {channel="remoteopenhab:server:ohgf:g1luxlev1" } 
+
+//Dimmers
+Dimmer g1dimmer1 "Main Spot [%.0f ]" <slider> (Gf1Bed) [Light]  {channel="remoteopenhab:server:ohgf:g1dimmer1" } 
+Dimmer g1dimmer2 "Bath Spot [%.0f ]" <slider> (Gf1Bath) [Light]  {channel="remoteopenhab:server:ohgf:g1dimmer2" }
+Dimmer g1dimmer3 "G1/FUD14/3 [%.0f ]" <slider> (Spare) [Light]  {channel="remoteopenhab:server:ohgf:g1dimmer3" }
+Dimmer g1dimmer4 "Living [%.0f ]" <slider> (Gf1Bed) [Light]  {channel="remoteopenhab:server:ohgf:g1dimmer4" }
+
+//ON-OFF FSR14-4X
+Switch g1switch1  "G1/FSR4X-1A" <light> (Spare)             [Light] {channel="remoteopenhab:server:ohgf:g1switch1" }
+Switch g1switch2  "North Led" <light> (Gf1Bed)       [Light] {channel="remoteopenhab:server:ohgf:g1switch2" } 
+Switch g1switch3  "South Led" <light> (Gf1Bed)       [Light] {channel="remoteopenhab:server:ohgf:g1switch3" } 
+Switch g1switch4  "Wardrobe" <light> (Gf,Gf1Bed)            [Light] {channel="remoteopenhab:server:ohgf:g1switch4" }
+
+Switch g1switch5  "Kitchen Led" <light> (Gf1Bed)            [Light] {channel="remoteopenhab:server:ohgf:g1switch5" } 
+Switch g1switch6  "G1/FSR4X-2B" <light> (Spare)             [Light] {channel="remoteopenhab:server:ohgf:g1switch6" } 
+Switch g1switch7  "G1/FSR4X-2C" <light> (Spare)             [Light] {channel="remoteopenhab:server:ohgf:g1switch7" }
+Switch g1switch8  "G1/FSR4X-2D" <light> (Spare)             [Light] {channel="remoteopenhab:server:ohgf:g1switch8" } 
+
+Switch g1switch9  "Gym Veranda" <light> (GfVeranda)    [Light] {channel="remoteopenhab:server:ohgf:g1switch9" } 
+Switch g1switch10 "Gym Entrance" <light> (GfGardBack)   [Light] {channel="remoteopenhab:server:ohgf:g1switch10" } 
+Switch g1switch11 "G1/FSR4X-3C" <light> (Spare)             [Light] {channel="remoteopenhab:server:ohgf:g1switch11" }
+Switch g1switch12 "G1/FSR4X-3D" <light> (Spare)             [Light] {channel="remoteopenhab:server:ohgf:g1switch12" } 
+
+// ON-OFF FSR14-2X
+Switch g1switch13 "Fan SP1" <fan> (Gf1Bed)           [Light] {channel="remoteopenhab:server:ohgf:g1switch13" } 
+Switch g1switch14 "Fan Bed SP2" <fan> (Spare)           [Light] {channel="remoteopenhab:server:ohgf:g1switch14" } 
+
+Switch g1switch15 "Lamp Right"  <poweroutlet_uk> (Gf1Bed) [Light] {channel="remoteopenhab:server:ohgf:g1switch15" } 
+Switch g1switch16 "Lamp Left" <poweroutlet_uk> (Gf1Bed)   [Light] {channel="remoteopenhab:server:ohgf:g1switch16" } 
+
+Switch g1switch17 "G1/FSR2X-3A "  <poweroutlet_uk> (Spare)       [Light] {channel="remoteopenhab:server:ohgf:g1switch17" } 
+Switch g1switch18 "G1/FSR2X-3B " <poweroutlet_uk> (Spare)        [Light] {channel="remoteopenhab:server:ohgf:g1switch18" } 
+
+Switch g1switch19 "Bath Towel"  <radiator> (Gf1Bath)           [HVAC] {channel="remoteopenhab:server:ohgf:g1switch19" } 
+Switch g1switch20 "G1/FSR2X-4B" <radiator> (Spare)                [HVAC] {channel="remoteopenhab:server:ohgf:g1switch20" }
+
+Rollershutter g1motor1 "Living Left[%s]" /*(Gf1Bed)*/                  [Blinds] {channel="remoteopenhab:server:ohgf:g1motor1" }
+Rollershutter g1motor2 "Living Right[%s]" /*(Gf1Bed)*/                  [Blinds] {channel="remoteopenhab:server:ohgf:g1motor2" }
+
+Rollershutter g1motor3 "Kitchen [%s]" /*(Gf1Bed)*/                  [Blinds] {channel="remoteopenhab:server:ohgf:g1motor3" }
+Rollershutter g1motor4 "BED [%s]" /*(Gf1Bed)*/                  [Blinds] {channel="remoteopenhab:server:ohgf:g1motor4" }

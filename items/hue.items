@@ -1,0 +1,7 @@
+// Bulb1
+//Switch  Light1_Toggle   (All,Ff,FfKit)     { channel="hue:0210:1:bulb1:color" }
+//Dimmer  Light1_Dimmer  (All,Ff,FfKit)      { channel="hue:0210:1:bulb1:color" }
+//Color   Light1_Color    (All,Ff,FfKit)     { channel="hue:0210:1:bulb1:color" }
+//Dimmer  Light1_ColorTemp   (All,Ff,FfKit)  { channel="hue:0210:1:bulb1:color_temperature" }
+//String  Light1_Alert       (All,Ff,FfKit)  { channel="hue:0210:1:bulb1:alert" }
+//Switch  Light1_Effect     (All,Ff,FfKit)   { channel="hue:0210:1:bulb1:effect" }

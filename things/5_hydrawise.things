@@ -1,0 +1,12 @@
+// Hydrawise Local 
+/*
+Bridge hydrawise:local:roof "Hydrawise  Roof" [ host = "10.110.1.153",username = "admin", password = "nqjgaw" ,refresh = 30 ] {
+}
+*/
+
+//Hydrawise cloud
+Bridge hydrawise:account:hydacc "Hydrawise account" [ userName = "cpetros1979@gmail.com", password = "12345678" , savePassword = true, refresh = 30 ] {
+    Thing controller hydroof1 "Roof hydrawise"        [controllerId = 501625] 
+    Thing controller hydsec "Second Floor hydrawise"  [controllerId = 494533]
+    Thing controller hydbs "Basement hydrawise"       [controllerId = 717251]
+} 

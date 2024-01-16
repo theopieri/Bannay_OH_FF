@@ -1,0 +1,50 @@
+Number timerAutoManual1 "Timer1 Auto/Manual" <time>  (Timer)
+String timerStatus1     "Timer1 Status Of Timer" <time>  (Timer)
+Number timerHours1      "Timer1 Hour" <time>  (Timer)
+Number timerMinues1     "Timer1 Minues" <time>  (Timer)
+Number timerDuration1    "Timer1 Duration" <time>  (Timer)
+
+Number timerAutoManual2 "Timer2 Auto/Manual" <time>  (Timer)
+String timerStatus2     "Timer2 Status Of Timer" <time>  (Timer)
+Number timerHours2      "Timer2 Hour" <time>  (Timer)
+Number timerMinues2     "Timer2 Minues" <time>  (Timer)
+Number timerDuration2    "Timer2 Duration" <time>  (Timer)
+
+Number timerAutoManual3 "Timer3 Auto/Manual" <time>  (Timer)
+String timerStatus3     "Timer3 Status Of Timer" <time>  (Timer)
+Number timerHours3      "Timer3 Hour" <time>  (Timer)
+Number timerMinues3     "Timer3 Minues" <time>  (Timer)
+Number timerDuration3    "Timer2 Duration" <time>  (Timer)
+
+
+Number timerHours4      "Timer Hour FF and Second" <time>  (Timer)
+Number timerMinues4     "Timer Minues FF and Second" <time>  (Timer)
+
+Number vaRecWaterCancel "Frequency of FF and Second Rec Water" <pump> (param)
+
+//Virual actor 
+Switch vaOutdoorLights "Disable/Enable FF & RF Outdoor Lights" <Light>
+
+
+Switch vaSwitch     "Test V.A" <water>  (Timer)
+
+
+Number timerDurgPir1    "Duration PIR APT 1 BATH 1" <time>  (gparam) { channel="remoteopenhab:server:ohgf:timerDurgPir1" }
+
+Number timerDurgPir2    "Duration PIR APT 1 BATH 2" <time>  (gparam)  { channel="remoteopenhab:server:ohgf:timerDurgPir2" }
+
+Number timerDurgPir3    "Duration PIR APT 3 BATH 1" <time>  (gparam)  { channel="remoteopenhab:server:ohgf:timerDurgPir3" }
+
+Number timerDurgPir4    "Duration PIR APT 2 BATH 1" <time>  (gparam)  { channel="remoteopenhab:server:ohgf:timerDurgPir4" }
+
+//Virual actor 
+Switch gvaOutdoorLights "Disable/Enable GF Outdoor Lights" <Light> (gparam) { channel="remoteopenhab:server:ohgf:vaOutdoorLights" }
+
+Number gtimerHours1      "Timer Hour GF Outdoor Pool and Back House" <time>  (Timer) { channel="remoteopenhab:server:ohgf:timerHours1" }
+Number gtimerMinues1     "Timer Minues GF Outdoor Pool and Back House" <time>  (Timer) { channel="remoteopenhab:server:ohgf:timerMinues1" }
+
+
+Number gtimerHours2      "Timer Hour GF Parking and Front" <time>  (Timer) { channel="remoteopenhab:server:ohgf:timerHours2" }
+Number gtimerMinues2     "Timer Minues GF Parking and Front" <time>  (Timer) { channel="remoteopenhab:server:ohgf:timerMinues2" }
+
+Number gvaRecWaterCancel "Frequency of GF Rec Water" <pump> (gparam) { channel="remoteopenhab:server:ohgf:vaRecWaterCancel" }

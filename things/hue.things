@@ -1,0 +1,8 @@
+Bridge hue:bridge:1 "FF-Philip-hue"[ ipAddress="10.110.11.91", userName="eLFLT9mgrLqEwTA36qt5SlpVMZ9F3B-lSPVsLD-r" ]
+{
+
+0210 bulb1 "Lamp 1"  @ "Kitchen"    [ lightId="5" ]
+
+
+
+}

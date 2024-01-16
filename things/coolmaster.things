@@ -1,0 +1,18 @@
+Bridge coolmasternet:controller:main [ host="10.110.1.240",port=10102,refresh=20 ] {
+
+  Thing hvac ac1  [ uid="L7.001" ]
+  Thing hvac ac2  [ uid="L7.002" ]
+  //Thing hvac ac3  [ uid="L7.003" ]
+  Thing hvac ac4  [ uid="L7.004" ]
+  //Thing hvac ac5  [ uid="L7.005" ]
+  Thing hvac ac6  [ uid="L7.006" ]
+  Thing hvac ac7  [ uid="L7.007" ]
+  Thing hvac ac8  [ uid="L7.022" ]
+  Thing hvac ac9  [ uid="L7.009" ]
+  Thing hvac ac10 [ uid="L7.023" ]
+  Thing hvac ac11 [ uid="L7.011" ]
+  Thing hvac ac12 [ uid="L7.012" ]
+  Thing hvac ac13 [ uid="L7.013" ]
+  Thing hvac ac20 [ uid="L7.020" ]
+  Thing hvac ac21 [ uid="L7.021" ]
+}

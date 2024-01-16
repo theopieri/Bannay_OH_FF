@@ -1,0 +1,65 @@
+//curl -X PUT --header "Content-Type: application/json" --header "Accept: application/json" "http://192.168.33.250:8080/rest/items/DayNight/tags/Light"
+//Group
+Group scene "Scenes" <party>
+Group meter "Energy Meter" <energy>
+Group:Switch:OR(ON, OFF) AcsFF  "AC'S FF [(%d)]"   <snow>    ["Location"]
+Group:Switch:OR(ON, OFF) AcsGF  "AC'S GF [(%d)]"   <snow>    ["Location"]
+Group Timer  "Timer"   <time>    
+Group param "Parameters" <keyring>
+Group gparam "GF Parameters" <keyring> 
+Group Spare  "Spare"   <Spare>    
+Group All       "ALL" 
+Group:Switch:OR(ON, OFF) Stairs  "Stairs" <corridor> ["Location"]
+Group Sensors "Sensors" <corridor> ["Location"]
+//Group Gf0         "GF APT 1" <groundfloor> ["Location"]
+//Group Gf1         "GYM" <groundfloor> ["Location"]
+//Group Gf2         "Guest Room 2" <groundfloor> ["Location"]
+Group Ser         "Access Control" <door> ["Location"]
+Group Hydrawise "Hydrawise"
+Group hydRoof   "Roof controller"    (Hydrawise)
+Group hydSecond  "Second Floor controller"    (Hydrawise)
+Group hydBS "Basement controller"    (Hydrawise)
+//Ground Floor Group APT G
+Group:Switch:OR(ON, OFF) Gf         "Ground Floor [(%d)]" <groundfloor> ["Location"]
+Group:Switch:OR(ON, OFF) GfKit      "GF Kitchen [(%d)]" <kitchen> (Gf) ["Location"]
+Group:Switch:OR(ON, OFF) GfLiv      "GF Living room [(%d)]" <sofa> (Gf) ["Location"]
+Group:Switch:OR(ON, OFF) GfDin      "GF Dining [(%d)]" <sofa> (Gf) ["Location"]
+Group:Switch:OR(ON, OFF) GfBed1     "Guest Room 1 [(%d)]" <bedroom_blue> (Gf) ["Location"]
+//Group:Switch:OR(ON, OFF) GfBath1    "GF Bath 1 [(%d)]" <bath> (Gf) ["Location"]
+Group:Switch:OR(ON, OFF) GfBed2     "Office [(%d)]" <office> (Gf) ["Location"]
+//Group:Switch:OR(ON, OFF) GfBath2    "GF Bath 2 [(%d)]" <bath> (Gf) ["Location"]
+Group:Switch:OR(ON, OFF) GfLaun     "GF Laundry & Corridor [(%d)]" <corridor> (Gf) ["Location"]
+//Group GfOut      "GF Outdoor" <garden> ["Location"]
+Group:Switch:OR(ON, OFF) 	GfOut 		"GF Outdoor [(%d)]" 	    <garden>		["Location"]
+Group:Switch:OR(ON, OFF) 	GfPool 		"Outdoor Pool Lights [(%d)]" 	    <garden> (GfOut)		["Location"]
+Group:Switch:OR(ON, OFF) 	GfParking   "Outdoor Common Parking Lights [(%d)]" <garden>	(GfOut)	["Location"]
+Group:Switch:OR(ON, OFF) 	GfGardFront  "Outdoor Garden Front Lights [(%d)]" 	    <garden> (GfOut)		["Location"]
+Group:Switch:OR(ON, OFF) 	GfGardBack 	"Outdoor Garden Back Lights [(%d)]" 	    <garden> (GfOut)		["Location"]
+Group:Switch:OR(ON, OFF) 	GfVeranda 	"Outdoor Veranda Lights [(%d)]" 	    <garden> (GfOut)	["Location"]
+//Ground Floor APT G1
+//Group:Switch:OR(ON, OFF) Gf1Kit      "GYM Kitchen [(%d)]" <kitchen> (Gf) ["Location"]
+Group:Switch:OR(ON, OFF) Gf1Liv      "GYM Living room [(%d)]" <sofa> (Gf) ["Location"]
+Group:Switch:OR(ON, OFF) Gf1Bed     "GYM [(%d)]" <boy_2> (Gf) ["Location"]
+//Group:Switch:OR(ON, OFF) Gf1Bath    "GYM Bath [(%d)]" <bath> (Gf) ["Location"]
+//Ground Floor APT G2
+Group:Switch:OR(ON, OFF) Gf2Bed     "Guest Room 2 [(%d)]" <bedroom_red> (Gf) ["Location"]
+//Group:Switch:OR(ON, OFF) Gf2Bath    "GF3 Bath [(%d)]" <bath> (Gf) ["Location"]
+//First Floor Group
+Group:Switch:OR(ON, OFF) Ff         "First Floor [(%d)]" <groundfloor> ["Location"]
+Group:Switch:OR(ON, OFF) FfKit      "FF Kitchen [(%d)]"  <kitchen> (Ff) ["Location"]
+Group:Switch:OR(ON, OFF) FfLiv      "FF Living room [(%d)]" <sofa> (Ff) ["Location"]
+Group:Switch:OR(ON, OFF) FfDin      "FF Dining [(%d)]" <sofa> (Ff) ["Location"]
+Group:Switch:OR(ON, OFF) FfMBed     "FF M.Bed [(%d)]" <bedroom_blue> (Ff) ["Location"]
+//Group:Switch:OR(ON, OFF) FfMBath    "FF M.Bath [(%d)]" <bath> (Ff) ["Location"]
+Group:Switch:OR(ON, OFF) FfBed1     "Raphael Room[(%d)]" <bedroom_orange> (Ff) ["Location"]
+//Group:Switch:OR(ON, OFF) FfBath1    "FF Bath 1 [(%d)]" <bath> (Ff) ["Location"]
+Group:Switch:OR(ON, OFF) FfBed2     "Dana Room [(%d)]" <bedroom_red> (Ff) ["Location"]
+//Group:Switch:OR(ON, OFF) FfBath2    "FF Wardrobe [(%d)]" <bath> (Ff) ["Location"]
+Group:Switch:OR(ON, OFF) FfLaun     "FF Laundry & Corrodor [(%d)]" <whitegood> (Ff) ["Location"]
+Group:Switch:OR(ON, OFF)  FfOut      "FF Outdoor [(%d)]" <garden> (GfOut) ["Location"]
+//Roof Group
+Group:Switch:OR(ON, OFF) Rf         "Second Floor [(%d)]" <groundfloor> ["Location"]
+Group:Switch:OR(ON, OFF) RfKit      "2nd Kitchen [(%d)]"  <kitchen> (Rf) ["Location"] 
+Group:Switch:OR(ON, OFF) RfBed      "2nd Bed [(%d)]"  <bedroom_blue> (Rf) ["Location"]
+Group:Switch:OR(ON, OFF) RfBath     "2nd Bath [(%d)]" <bath> (Rf) ["Location"]
+Group:Switch:OR(ON, OFF) RfOut      "2nd Outdoor [(%d)]"  <garden> (GfOut) ["Location"]
