@@ -30,7 +30,7 @@ Switch gswitch4  "G/FSR4X-1D" <light> (Spare)              [Light] {channel="rem
 
 Switch gswitch5  "Guest Room 1 Wardrobe Led" <light> (GfBed1)  [Light] {channel="remoteopenhab:server:ohgf:gswitch5" } 
 Switch gswitch6  "Guest Room 1 Led" <light> (GfBed1)           [Light] {channel="remoteopenhab:server:ohgf:gswitch6" } 
-Switch gswitch7  "G/FSR4X-2C" <light> (Spare)              [Light] {channel="remoteopenhab:server:ohgf:gswitch7" } 
+//Switch gswitch7  "G/FSR4X-2C" <light> (Spare)              [Light] {channel="remoteopenhab:server:ohgf:gswitch7" } 
 Switch gswitch8  "G/FSR4X-2D" <light> (Spare)              [Light] {channel="remoteopenhab:server:ohgf:gswitch8" } 
 
 Switch gswitch9  "Office Wardrobe Led" <light> (GfBed2)  [Light] {channel="remoteopenhab:server:ohgf:gswitch9" }  
@@ -69,7 +69,7 @@ Switch gswitch34 "Fan Veranda SPEED" <fan> /*(GfLiv)*/        [Light] {channel="
 Switch gswitch35 "Fan Office SP1" <fan> /*(GfBed2)*/         [Light] {channel="remoteopenhab:server:ohgf:gswitch35" } 
 Switch gswitch36 "Fan Office SP2" <fan> (Spare)         [Light] {channel="remoteopenhab:server:ohgf:gswitch36" } 
 
-Switch gswitch37 "G/FSR2X-3A " <light> (Spare)             [Light] {channel="remoteopenhab:server:ohgf:gswitch37" } 
+//Switch gswitch37 "G/FSR2X-3A " <light> (Spare)             [Light] {channel="remoteopenhab:server:ohgf:gswitch37" } 
 Switch gswitch38 "Office Shower" <light> (GfBed2)       [Light] {channel="remoteopenhab:server:ohgf:gswitch38" }
 
 Switch gswitch39 "West Spike" <light> (GfPool)                 [Light] {channel="remoteopenhab:server:ohgf:gswitch39" } 

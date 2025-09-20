@@ -15,4 +15,8 @@ Bridge coolmasternet:controller:main [ host="10.110.1.240",port=10102,refresh=20
   Thing hvac ac13 [ uid="L7.013" ]
   Thing hvac ac20 [ uid="L7.020" ]
   Thing hvac ac21 [ uid="L7.021" ]
+  Thing hvac ac22 [ uid="L7.022" ]
+  Thing hvac ac23 [ uid="L7.023" ]
+  Thing hvac ac24 [ uid="L7.024" ]
+  Thing hvac ac25 [ uid="L7.025" ]
 }

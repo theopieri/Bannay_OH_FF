@@ -541,6 +541,40 @@ sitemap ff label="Banay-House" {
                     Text item=fPir2
                 }
                 Frame label="Cooling"{
+                    Switch item=AC24On
+                    Selection item=AC24Mode mappings=[cool="Cool"
+                                                ,heat="Heat"
+                                                ,dry="Dry"
+                                                ,fan= "Fan"
+                                                //,auto="Auto"
+                                                ] visibility=[AC24On==ON]
+                    Selection item=AC24Fan mappings=[l="Low"
+                                                    ,m="Medium"
+                                                    ,h="High"
+                                                    ,t= "Top"
+                                                    ,a="Auto"
+                                                    ] visibility=[AC24On==ON]
+                Setpoint item=AC24Set minValue=16 maxValue=33 visibility=[AC24On==ON]
+                Text item=AC24Temp visibility=[AC24On==ON]
+                                    //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                                    valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"]
+                Switch item=AC25On
+                    Selection item=AC25Mode mappings=[cool="Cool"
+                                                ,heat="Heat"
+                                                ,dry="Dry"
+                                                ,fan= "Fan"
+                                                //,auto="Auto"
+                                                ] visibility=[AC25On==ON]
+                    Selection item=AC25Fan mappings=[l="Low"
+                                                    ,m="Medium"
+                                                    ,h="High"
+                                                    ,t= "Top"
+                                                    ,a="Auto"
+                                                    ] visibility=[AC25On==ON]
+                Setpoint item=AC25Set minValue=16 maxValue=33 visibility=[AC25On==ON]
+                Text item=AC25Temp visibility=[AC25On==ON]
+                                    //labelcolor=[>=25="orange", >=15="green", 0="white", <15="blue"] 
+                                    valuecolor=[>=25="orange", >=15="green", 0="white", <15="blue"]
                     Switch item=AC13On
                     Selection item=AC13Mode mappings=[cool="Cool"
                                                 ,heat="Heat"
